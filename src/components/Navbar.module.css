@@ -1,0 +1,10 @@
+.navbar {
+  background: var(--menu-colors);
+  color: var(--font-color);
+  width: auto;
+  padding: 5px 10px;
+  height: 20px;
+  margin: 20px 30px;
+  border-radius: 10px;
+  border: 2px solid var(--font-color);
+}
