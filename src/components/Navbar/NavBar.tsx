@@ -1,9 +1,8 @@
-import React from "react";
-import Style from "./Navbar.module.css";
-import Utility from "./utility.module.css";
+import Style from "./styles.module.scss";
+// import Utility from "../utility.module.css";
 
 function Navbar() {
-  const navStyles = `${Utility["flex-between"]} ${Style.navbar}`;
+  const navStyles = ` ${Style.navbar}`;
   return (
     <div className={navStyles}>
       <div>start</div>
