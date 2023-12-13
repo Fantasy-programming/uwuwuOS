@@ -4,7 +4,9 @@
   --font-color: #39372b;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -19,14 +21,11 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden; 
+  overflow: hidden;
   background: var(--primary-light);
-
 }
-
