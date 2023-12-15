@@ -1,8 +1,9 @@
 import Play from "./Play";
 import Style from "./Icon.module.scss";
 import { useRef } from "react";
-import { usewindowStore } from "@/stores/windowStore";
-import useDoubleClick from "@/hooks/useDoubleClick";
+import { usewindowStore } from "@stores/windowStore";
+import { Rnd } from "react-rnd";
+import useDoubleClick from "@hooks/useDoubleClick";
 
 const PlayIcon = () => {
   const { spawnProcess } = usewindowStore();
@@ -27,9 +28,11 @@ const PlayIcon = () => {
   });
 
   return (
-    <div className={Style.icon} ref={iconRef}>
-      <Play width={48} height={48} />
-    </div>
+    <Rnd>
+      <div className={Style.icon} ref={iconRef}>
+        <Play width={48} height={48} />
+      </div>
+    </Rnd>
   );
 };
 

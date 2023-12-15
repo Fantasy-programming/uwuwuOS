@@ -7,6 +7,8 @@ type useDoubleClickProps = {
   onDoubleClick?: (e: Event) => void;
 };
 
+// USED TO HANDLE DOUBLE CLICK EVENTS
+
 const useDoubleClick = ({
   ref,
   latency = 300,

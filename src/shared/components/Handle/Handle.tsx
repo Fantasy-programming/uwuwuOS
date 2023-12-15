@@ -1,4 +1,4 @@
-import { usewindowStore } from "@/stores/windowStore";
+import { usewindowStore } from "@stores/windowStore";
 
 import Style from "./Handle.module.scss";
 import HandleBtn from "./HandleBtn";

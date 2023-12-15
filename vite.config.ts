@@ -16,9 +16,11 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-      "@components": path.resolve(__dirname, "./src/components"),
-      "@hooks": path.resolve(__dirname, "./src/hooks"),
-      "@design": path.resolve(__dirname, "./src/design"),
+      "@design": path.resolve(__dirname, "./src/App/design"),
+      "@components": path.resolve(__dirname, "./src/shared/components"),
+      "@hooks": path.resolve(__dirname, "./src/shared/hooks"),
+      "@stores": path.resolve(__dirname, "./src/shared/stores"),
+      "@utils": path.resolve(__dirname, "./src/shared/utils"),
     },
-  }
+  },
 });

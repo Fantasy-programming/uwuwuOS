@@ -3,7 +3,7 @@ import { useState } from "react";
 import Style from "./Window.module.scss";
 import { Handle } from "../Handle/Handle";
 
-import { type WindowState } from "@/stores/windowStore";
+import { type WindowState } from "@stores/windowStore";
 
 const Window = ({
   name,

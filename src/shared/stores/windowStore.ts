@@ -1,6 +1,9 @@
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 
+// TODO: Implement focus state (current windows)
+// TODO: Implement a way to do (minimized / maximized / normal)
+
 export interface WindowState {
   id: string;
   name: string;
