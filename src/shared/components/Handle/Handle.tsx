@@ -12,7 +12,6 @@ export const Handle = ({ name, id }: { name: string; id: string }) => {
         <HandleBtn
           color="red"
           onClick={() => {
-            console.log(id);
             killProcess(id);
           }}
         />

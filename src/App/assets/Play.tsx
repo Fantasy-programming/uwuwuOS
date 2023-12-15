@@ -1,4 +1,3 @@
-import * as React from "react";
 import { SVGProps, memo } from "react";
 const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -8,9 +7,6 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
     height={512}
     viewBox="0 0 512 512" // Define the viewBox attribute
     preserveAspectRatio="xMidYMid meet" // Preserve aspect ratio
-    style={{
-      enableBackground: "new 0 0 512 512",
-    }}
     {...props}
   >
     <path
@@ -38,7 +34,6 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
       data-original="#000000"
       style={{
         opacity: 0.1,
-        enableBackground: "new",
       }}
     />
     <linearGradient

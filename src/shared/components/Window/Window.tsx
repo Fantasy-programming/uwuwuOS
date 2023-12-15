@@ -2,6 +2,7 @@ import { Rnd } from "react-rnd";
 import { useState } from "react";
 import Style from "./Window.module.scss";
 import { Handle } from "../Handle/Handle";
+import useApp from "@hooks/useApp";
 
 import { type WindowState } from "@stores/windowStore";
 
@@ -20,6 +21,8 @@ const Window = ({
     width: width,
     height: height,
   });
+
+  const Content = useApp({ name: appName });
 
   return (
     <Rnd
@@ -41,10 +44,7 @@ const Window = ({
       }}
     >
       <Handle name={name} id={id} />
-      <div style={{ display: "flex" }}>
-        {appName}
-        {id}
-      </div>
+      <Content />
     </Rnd>
   );
 };
