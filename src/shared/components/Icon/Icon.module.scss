@@ -11,7 +11,7 @@
   .title {
     font-size: 0.75rem;
     font-weight: 400;
-    color: var(--font-color);
+    color: var(--primary-light);
     text-align: center;
     margin-top: 0.5rem;
   }
@@ -20,8 +20,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 0;
-    height: 0;
+    width: 0%;
+    height: 0%;
     background-color: gray;
     opacity: 0.2;
     transition: width 0.3s height 0.3s;

@@ -3,14 +3,13 @@ import Style from "./Welcome.module.scss";
 const content = () => {
   return (
     <div className={Style.frame}>
-      <input placeholder="Search" />
       <div className={Style.box}>
         <p>Welcome !</p>
         <span>Me</span>
         <div className={Style.flexbox}>
-          <a href="">@github</a>
-          <a href="">@reddit</a>
-          <a href="">@twitter</a>
+          <a href="github.com">@github</a>
+          <a href="reddit.com">@reddit</a>
+          <a href="twitter.com">@twitter</a>
         </div>
       </div>
       <div className={Style.box}>

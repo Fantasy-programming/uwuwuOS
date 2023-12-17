@@ -36,6 +36,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         opacity: 0.1,
       }}
     />
+    <title>Play Icon</title>
     <linearGradient
       id="a"
       x1={-34.243}

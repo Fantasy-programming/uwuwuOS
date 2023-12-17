@@ -28,6 +28,7 @@ const Icon = (props) => {
 
   useDoubleClick({
     onDoubleClick: () => {
+      console.log("double click");
       spawnProcess(process);
     },
     ref: iconRef,
@@ -36,13 +37,17 @@ const Icon = (props) => {
 
   return (
     <>
-      <div style={style} className={Style.icon}>
-        <div ref={setNodeRef} {...attributes} {...listeners}>
+      <div
+        style={style}
+        className={Style.icon}
+        ref={setNodeRef}
+        {...attributes}
+        {...listeners}
+      >
+        <div ref={iconRef} data-no-dnd="true">
           {props.children}
         </div>
-        <div ref={iconRef} className={Style.title}>
-          {props.title}
-        </div>
+        <div className={Style.title}>{props.title}</div>
         <div className={Style.overlay} />
       </div>
     </>

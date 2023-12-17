@@ -1,5 +1,6 @@
 import { DndContext } from "@dnd-kit/core";
 import { useState } from "react";
+import { useGetSensors } from "@hooks/useGetSensors";
 
 import Navbar from "@components/Navbar";
 import IconArea from "./DragArea";
@@ -11,11 +12,13 @@ const Screen = ({ children }: { children: React.ReactNode }) => {
     setParent(over ? over.id : `0-0`);
   }
 
+  const sensors = useGetSensors();
+
   return (
     <>
       <Navbar />
       <main className="Frame">
-        <DndContext onDragEnd={handleDragEnd}>
+        <DndContext onDragEnd={handleDragEnd} sensors={sensors}>
           <IconArea x={18} y={7} value={parent} />
         </DndContext>
         {children}
