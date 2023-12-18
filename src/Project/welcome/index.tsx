@@ -1,11 +1,11 @@
-import Icon from "@components/Icon";
-import PIcon from "@assets/Play";
+import Shortcut from "@components/Icon";
+import Icon from "@assets/Play";
 
 const PlayIcon = () => {
   return (
-    <Icon id="play" title="welcome">
-      <PIcon width={48} height={48} />
-    </Icon>
+    <Shortcut id="play" title="welcome">
+      <Icon width={48} height={48} />
+    </Shortcut>
   );
 };
 

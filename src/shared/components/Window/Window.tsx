@@ -1,8 +1,10 @@
 import { Rnd } from "react-rnd";
 import { useState } from "react";
-import Style from "./Window.module.scss";
-import { Handle } from "../Handle/Handle";
 import useApp from "@hooks/useApp";
+
+import { Handle } from "@components/Handle";
+
+import Style from "./Window.module.scss";
 
 import { type WindowState } from "@stores/windowStore";
 

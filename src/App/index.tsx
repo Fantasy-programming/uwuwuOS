@@ -4,6 +4,7 @@ import "./design/globals.scss";
 
 import Screen from "@components/Wrapper/Screen";
 import Window from "@components/Window/Window";
+
 import { usewindowStore } from "@stores/windowStore";
 
 function App() {

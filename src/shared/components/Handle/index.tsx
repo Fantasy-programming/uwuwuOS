@@ -1,7 +1,8 @@
 import { usewindowStore } from "@stores/windowStore";
 
-import Style from "./Handle.module.scss";
 import HandleBtn from "./HandleBtn";
+
+import Style from "./Handle.module.scss";
 
 export const Handle = ({ name, id }: { name: string; id: string }) => {
   const { killProcess } = usewindowStore();
