@@ -18,6 +18,7 @@ const useDoubleClick = ({
   useEffect(() => {
     const clickRef = ref.current;
     let clickCount = 0;
+
     const handleClick = (e: MouseEvent) => {
       clickCount += 1;
 

@@ -3,23 +3,23 @@ import Style from "./Welcome.module.scss";
 const content = () => {
   return (
     <div className={Style.frame}>
-      <div className={Style.box}>
-        <p>Welcome !</p>
-        <span>Me</span>
-        <div className={Style.flexbox}>
-          <a href="github.com">@github</a>
-          <a href="reddit.com">@reddit</a>
-          <a href="twitter.com">@twitter</a>
+      <main className={Style.container}>
+        <div className={Style.image} />
+        <div className={Style.infobox}>
+          <div>
+            <h1>Welcome to uwuwuOS</h1>
+            <p>The best OS you'll use on earth</p>
+          </div>
+          <div className={Style.textIcon}>
+            <div className="icon"></div>
+            <span>Everything you need to get PTSD</span>
+          </div>
         </div>
-      </div>
-      <div className={Style.box}>
-        <div className={Style.flexbox}>
-          <div>youtube</div>
-          <div>google</div>
-          <div>reddit</div>
-          <div>gitcat</div>
-        </div>
-      </div>
+      </main>
+      <footer className={Style.footer}>
+        <button type="button">UwU</button>
+        <button type="button">I hate it</button>
+      </footer>
     </div>
   );
 };

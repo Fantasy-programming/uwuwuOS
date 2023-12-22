@@ -9,10 +9,6 @@ module.exports = {
     "plugin:storybook/recommended",
     "prettier",
   ],
-  rules: {
-    "react/prop-types": 0,
-    "react/react-in-jsx-scope": 0,
-  },
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
   plugins: ["react-refresh", "jsx-a11y"],

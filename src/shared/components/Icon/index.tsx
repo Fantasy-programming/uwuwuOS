@@ -8,12 +8,18 @@ import { usewindowStore } from "@stores/windowStore";
 
 import Style from "./Icon.module.scss";
 
-const Icon = (props) => {
+interface IconProps {
+  children: React.ReactNode;
+  title: string;
+  id: string;
+}
+
+const Icon = ({ children, title, id }: IconProps) => {
   const { spawnProcess } = usewindowStore();
   const iconRef = useRef<HTMLDivElement>(null);
 
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
-    id: props.id,
+    id: id,
   });
 
   const style = {
@@ -28,7 +34,6 @@ const Icon = (props) => {
 
   useDoubleClick({
     onDoubleClick: () => {
-      console.log("double click");
       spawnProcess(process);
     },
     ref: iconRef,
@@ -45,9 +50,9 @@ const Icon = (props) => {
         {...listeners}
       >
         <div ref={iconRef} data-no-dnd="true">
-          {props.children}
+          {children}
         </div>
-        <div className={Style.title}>{props.title}</div>
+        <div className={Style.title}>{title}</div>
         <div className={Style.overlay} />
       </div>
     </>
