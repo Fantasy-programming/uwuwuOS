@@ -20,6 +20,8 @@ function App() {
               name={window.name}
               appName={window.appName}
               id={window.id}
+              width={window.width}
+              height={window.height}
             />
           );
         })}

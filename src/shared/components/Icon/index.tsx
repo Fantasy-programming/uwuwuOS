@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { useDraggable } from "@dnd-kit/core";
 
 import useDoubleClick from "@hooks/useDoubleClick";
-import { usewindowStore } from "@stores/windowStore";
+import { usewindowStore, WindowState } from "@stores/windowStore";
 
 import Style from "./Icon.module.scss";
 
@@ -12,9 +12,10 @@ interface IconProps {
   children: React.ReactNode;
   title: string;
   id: string;
+  app: WindowState;
 }
 
-const Icon = ({ children, title, id }: IconProps) => {
+const Icon = ({ children, title, id, app }: IconProps) => {
   const { spawnProcess } = usewindowStore();
   const iconRef = useRef<HTMLDivElement>(null);
 
@@ -26,15 +27,9 @@ const Icon = ({ children, title, id }: IconProps) => {
     transform: CSS.Translate.toString(transform),
   };
 
-  const process = {
-    id: crypto.randomUUID(),
-    name: "Welcome",
-    appName: "Welcome",
-  };
-
   useDoubleClick({
     onDoubleClick: () => {
-      spawnProcess(process);
+      spawnProcess(app);
     },
     ref: iconRef,
     latency: 250,

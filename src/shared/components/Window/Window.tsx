@@ -29,6 +29,11 @@ const Window = ({
   return (
     <Rnd
       className={Style.window}
+      // maxHeight=""
+      // minHeight=""
+      // maxWidth=""
+      // minWidth=""
+      // enableResizing
       bounds={".Frame"}
       size={{ width: window.width, height: window.height }}
       position={{ x: window.x, y: window.y }}

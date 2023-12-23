@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import sass from "sass";
@@ -12,6 +14,11 @@ export default defineConfig({
         implementation: sass,
       },
     },
+  },
+  test: {
+    environment: "jsdom",
+    setupFiles: ["./tests/setup.ts"],
+    globals: true,
   },
   resolve: {
     alias: {

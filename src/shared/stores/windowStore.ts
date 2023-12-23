@@ -30,12 +30,13 @@ export const usewindowStore = create<WindowsState & WindowsActions>()(
     windows: [],
     spawnProcess: (info: WindowState) =>
       set((state) => {
-        state.processes + 1, state.windows.push(info);
+        state.processes + 1;
+        state.windows.push(info);
       }),
     killProcess: (id: string) =>
       set((state) => {
-        state.processes - 1,
-          (state.windows = state.windows.filter((window) => window.id !== id));
+        state.processes - 1;
+        state.windows = state.windows.filter((window) => window.id !== id);
       }),
   })),
 );

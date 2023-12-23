@@ -1,31 +1,23 @@
-import { useMemo, useState } from "react";
+import React, { useMemo, Fragment } from "react";
 import { useDroppable, DndContext, DragEndEvent } from "@dnd-kit/core";
 import { useGetSensors } from "@hooks/useGetSensors";
+import { useIconStore } from "@stores/iconStore";
+import useIcon from "@hooks/useIcon";
 
-import PlayIcon from "@/Project/welcome";
 import Style from "./DragArea.module.scss";
-
-interface DragAreaProps {
-  children: React.ReactNode;
-}
-
-interface PlaceProps {
-  children?: React.ReactNode;
-  id: string;
-}
 
 interface GridProps {
   rows: number[];
   cols: number[];
-  parent: string | number;
 }
 
-const DragArea = ({ children }: DragAreaProps) => {
-  const [parent, setParent] = useState<string | number>("0-0");
+const DragArea: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const sensors = useGetSensors();
+  const { moveIcon } = useIconStore();
 
-  function handleDragEnd({ over }: DragEndEvent) {
-    setParent(over ? over.id : "0-0");
+  function handleDragEnd({ over, active }: DragEndEvent) {
+    if (!over) return;
+    moveIcon(active.id.toString(), over.id.toString());
   }
 
   const rows = useMemo(() => Array.from({ length: 18 }, (_, i) => i), []);
@@ -34,38 +26,39 @@ const DragArea = ({ children }: DragAreaProps) => {
   return (
     <main className="Frame">
       <DndContext onDragEnd={handleDragEnd} sensors={sensors}>
-        <Grid parent={parent} rows={rows} cols={cols} />
+        <Grid rows={rows} cols={cols} />
         {children}
       </DndContext>
     </main>
   );
 };
 
-const Grid = ({ parent, rows, cols }: GridProps) => {
+const Grid: React.FC<GridProps> = ({ rows, cols }) => {
   return (
     <div className={Style.dragArea}>
-      {rows.map((_, rowIndex) => (
-        <div key={`row-${rowIndex}`}>
-          {cols.map((_, colIndex) => (
-            <Place
-              key={`${rowIndex}-${colIndex}`}
-              id={`${rowIndex}-${colIndex}`}
-            >
-              {parent === `${rowIndex}-${colIndex}` && <PlayIcon />}
-            </Place>
-          ))}
-        </div>
+      {cols.map((_, colIndex) => (
+        <Fragment key={`row-${colIndex}`}>
+          {rows.map((_, rowIndex) => {
+            return (
+              <Place
+                key={`${rowIndex}-${colIndex}`}
+                id={`${rowIndex}-${colIndex}`}
+              />
+            );
+          })}
+        </Fragment>
       ))}
     </div>
   );
 };
 
-const Place = ({ children, id }: PlaceProps) => {
+const Place: React.FC<{ id: string }> = ({ id }) => {
+  const IconComponent = useIcon(id);
   const { setNodeRef } = useDroppable({ id: id });
 
   return (
     <div ref={setNodeRef} className={Style.place}>
-      {children}
+      <IconComponent />
     </div>
   );
 };
