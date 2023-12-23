@@ -1,5 +1,5 @@
 import Shortcut from "@components/Icon";
-import Icon from "@assets/Play";
+import Icon from "@assets/Icons/Welcome";
 
 const PlayIcon = () => {
   const welcomeProcess = {

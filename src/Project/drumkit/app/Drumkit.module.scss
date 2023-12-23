@@ -1,0 +1,39 @@
+.frame {
+  width: 100%;
+  height: 100%;
+  background-color: #283149;
+}
+
+.game {
+  text-align: center;
+  font-size: 3rem;
+  color: var(--secondary-light);
+  text-shadow: 3px 0 #e07d6d;
+}
+
+.drumSet {
+  margin: 10% auto;
+}
+
+.drum {
+  outline: none;
+  border: 4px solid #e07d6d;
+  font-size: 2rem;
+  line-height: 2;
+  font-weight: 900;
+  color: #e07d6d;
+  text-shadow: 1px 0 var(--secondary-light);
+  border-radius: 15px;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  margin: 10px;
+  background-color: white;
+
+  &:hover,
+  &:focus {
+    border: 4px solid black;
+    color: var(--font-color);
+  }
+}
