@@ -16,7 +16,7 @@ A Simple web OS for weebs out here.
 - [ ] A way to have different controls for each window (with different functions)
 - [ ] A Dock ?? A way to minimize Apps
 - [ ] A Way to maximize apps
-- [ ] A Way to remember icons positions & avoid conflicts (collision by moving previous icon to next position)
+- [x] A Way to remember icons positions & avoid conflicts (collision by moving previous icon to next position)
 - [ ] A settings app to change things like wallpaper, theme, etc
 - [ ] More Games & Jokes (& leaderboard & rankings)
 - [ ] More apps, more way more

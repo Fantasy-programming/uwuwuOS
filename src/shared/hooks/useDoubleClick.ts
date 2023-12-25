@@ -1,45 +1,35 @@
-import { type RefObject, useEffect } from "react";
+import { useRef } from "react";
 
-type useDoubleClickProps = {
-  ref: RefObject<HTMLElement>;
-  latency?: number;
-  onSingleClick?: (e: Event) => void;
-  onDoubleClick?: (e: Event) => void;
-};
+type OptionalCallback = (() => void) | undefined;
 
-// USED TO HANDLE DOUBLE CLICK EVENTS
+const useDoubleClick = (
+  onSingleClick?: OptionalCallback,
+  onDoubleClick?: OptionalCallback,
+  threshold = 300,
+): (() => void) => {
+  const clickCount = useRef(0);
+  const timer = useRef<NodeJS.Timeout | null>(null);
 
-const useDoubleClick = ({
-  ref,
-  latency = 300,
-  onSingleClick = () => null,
-  onDoubleClick = () => null,
-}: useDoubleClickProps) => {
-  useEffect(() => {
-    const clickRef = ref.current;
-    let clickCount = 0;
+  const handleClick = () => {
+    clickCount.current += 1;
 
-    const handleClick = (e: MouseEvent) => {
-      clickCount += 1;
+    if (clickCount.current === 1) {
+      timer.current = setTimeout(() => {
+        if (clickCount.current === 1 && onSingleClick) {
+          onSingleClick();
+        }
+        clickCount.current = 0;
+      }, threshold);
+    } else {
+      clearTimeout(timer.current as NodeJS.Timeout);
+      if (onDoubleClick) {
+        onDoubleClick();
+      }
+      clickCount.current = 0;
+    }
+  };
 
-      setTimeout(() => {
-        if (clickCount === 1) onSingleClick(e);
-        else if (clickCount === 2) onDoubleClick(e);
-
-        clickCount = 0;
-      }, latency);
-    };
-
-    if (!clickRef) return;
-
-    // Add event listener for click events
-    clickRef.addEventListener("click", handleClick);
-
-    // Remove event listener
-    return () => {
-      clickRef.removeEventListener("click", handleClick);
-    };
-  }, [ref, latency, onSingleClick, onDoubleClick]);
+  return handleClick;
 };
 
 export default useDoubleClick;

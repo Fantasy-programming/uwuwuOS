@@ -15,6 +15,7 @@ const DragArea: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const sensors = useGetSensors();
   const { moveIcon } = useIconStore();
 
+  // over = place, active = curren icon
   function handleDragEnd({ over, active }: DragEndEvent) {
     if (!over) return;
     moveIcon(active.id.toString(), over.id.toString());

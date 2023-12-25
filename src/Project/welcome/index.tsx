@@ -1,6 +1,8 @@
 import Shortcut from "@components/Icon";
 import Icon from "@assets/Icons/Welcome";
 
+// Welcome app for new users
+
 const PlayIcon = () => {
   const welcomeProcess = {
     id: crypto.randomUUID(),
