@@ -1,23 +1,22 @@
 import Style from "../Drumkit.module.scss";
-import useSound from "use-sound";
 
-const Button = ({
-  children,
-  sound,
-  bg,
-}: {
+interface ButtonProps {
   children: React.ReactNode;
-  bg: any;
-  // eslint-disable-next-line
-  sound: any;
-}) => {
-  const [play] = useSound(sound);
+  bg: string;
+  sound: string;
+}
+
+const Button: React.FC<ButtonProps> = ({ children, bg, sound }) => {
+  const play = (audioSrc: string) => {
+    new Audio(audioSrc).play();
+  };
+
   return (
     <button
       style={{ backgroundImage: `url(${bg})`, backgroundSize: "cover" }}
       type="button"
       className={Style.drum}
-      onClick={() => play()}
+      onClick={() => play(sound)}
     >
       {children}
     </button>

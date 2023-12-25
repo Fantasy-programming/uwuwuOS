@@ -21,7 +21,7 @@ import snare from "./_sound/snare.mp3";
 
 import Style from "./Drumkit.module.scss";
 
-const sounds = {
+const sounds: Record<string, string> = {
   w: crash,
   a: tom1,
   s: tom2,
@@ -33,15 +33,15 @@ const sounds = {
 
 const keys = Object.keys(sounds);
 
-const Content = () => {
-  const handleKeyDown = (event) => {
+const Content: React.FC = () => {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (keys.includes(event.key)) {
       new Audio(sounds[event.key]).play();
     }
   };
   return (
-    <FocusTrap>
-      <div className={Style.frame} onKeyDown={handleKeyDown}>
+    <FocusTrap onKeyDown={handleKeyDown}>
+      <div className={Style.frame}>
         <main className={Style.game}>
           <h1>Drumkit</h1>
           <div className={Style.drumSet}>
