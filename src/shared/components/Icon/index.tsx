@@ -23,6 +23,12 @@ const Icon = ({ children, title, id, app }: IconProps) => {
     },
   );
 
+  const handleEnter = (event: React.KeyboardEvent<HTMLElement>) => {
+    if (event.key === "Enter" || event.key === " ") {
+      spawnProcess(app);
+    }
+  };
+
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id: id,
   });
@@ -40,6 +46,9 @@ const Icon = ({ children, title, id, app }: IconProps) => {
         {...attributes}
         {...listeners}
         onClick={clickHandle}
+        onKeyDown={handleEnter}
+        role="button"
+        tabIndex={0}
       >
         <div>{children}</div>
         <div className={Style.title}>{title}</div>

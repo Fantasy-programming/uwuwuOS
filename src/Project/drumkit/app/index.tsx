@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import FocusTrap from "focus-trap-react";
 import Button from "./_component/Button";
 
@@ -33,15 +34,15 @@ const sounds: Record<string, string> = {
 
 const keys = Object.keys(sounds);
 
-const Content: React.FC = () => {
+const Content = () => {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (keys.includes(event.key)) {
       new Audio(sounds[event.key]).play();
     }
   };
   return (
-    <FocusTrap onKeyDown={handleKeyDown}>
-      <div className={Style.frame}>
+    <FocusTrap>
+      <div className={Style.frame} onKeyDown={handleKeyDown} role="application">
         <main className={Style.game}>
           <h1>Drumkit</h1>
           <div className={Style.drumSet}>
