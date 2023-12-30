@@ -4,6 +4,7 @@ import HandleBtn from "./HandleBtn";
 
 import Style from "./Handle.module.scss";
 
+// million-ignore
 export const Handle = ({ name, id }: { name: string; id: string }) => {
   const { killProcess } = usewindowStore();
 

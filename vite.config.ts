@@ -1,3 +1,4 @@
+import million from "million/compiler";
 /// <reference types="vitest" />
 
 import { defineConfig } from "vite";
@@ -7,7 +8,7 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [million.vite({ auto: true }), react()],
   css: {
     preprocessorOptions: {
       scss: {
