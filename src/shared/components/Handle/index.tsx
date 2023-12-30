@@ -1,12 +1,12 @@
-import { usewindowStore } from "@stores/windowStore";
+import { usewindowStore } from '@stores/windowStore'
 
-import HandleBtn from "./HandleBtn";
+import HandleBtn from './HandleBtn'
 
-import Style from "./Handle.module.scss";
+import Style from './Handle.module.scss'
 
 // million-ignore
 export const Handle = ({ name, id }: { name: string; id: string }) => {
-  const { killProcess } = usewindowStore();
+  const { killProcess } = usewindowStore()
 
   return (
     <div className={`${Style.handle} windows__handle`}>
@@ -14,7 +14,7 @@ export const Handle = ({ name, id }: { name: string; id: string }) => {
         <HandleBtn
           color="red"
           onClick={() => {
-            killProcess(id);
+            killProcess(id)
           }}
         />
         <HandleBtn color="yellow" />
@@ -24,5 +24,5 @@ export const Handle = ({ name, id }: { name: string; id: string }) => {
         <p>{name}</p>
       </div>
     </div>
-  );
-};
+  )
+}

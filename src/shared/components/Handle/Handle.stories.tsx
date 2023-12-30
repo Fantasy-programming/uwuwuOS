@@ -1,18 +1,18 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Handle } from "./index.tsx";
+import type { Meta, StoryObj } from '@storybook/react'
+import { Handle } from './index.tsx'
 
 const meta: Meta<typeof Handle> = {
-  title: "Handle",
+  title: 'Handle',
   component: Handle,
-};
+}
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Handle>;
+type Story = StoryObj<typeof Handle>
 
 export const WindowHandle: Story = {
   args: {
-    name: "Test interface",
-    id: "test",
+    name: 'Test interface',
+    id: 'test',
   },
-};
+}

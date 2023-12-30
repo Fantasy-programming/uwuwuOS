@@ -1,7 +1,7 @@
 // Music player
 
 const uwufyIcon = () => {
-  return <div>uwufyIcon</div>;
-};
+  return <div>uwufyIcon</div>
+}
 
-export default uwufyIcon;
+export default uwufyIcon

@@ -1,5 +1,5 @@
 const Snake = () => {
-  return <div>work in progress</div>;
-};
+  return <div>work in progress</div>
+}
 
-export default Snake;
+export default Snake

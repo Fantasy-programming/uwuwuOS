@@ -1,4 +1,4 @@
-import { SVGProps, memo } from "react";
+import { SVGProps, memo } from 'react'
 const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         offset={0}
         stopColor="#000000;stop-opacity:0.1"
         style={{
-          stopColor: "#000",
+          stopColor: '#000',
           stopOpacity: 0.1,
         }}
       />
@@ -58,7 +58,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         offset={1}
         stopColor="#000000;stop-opacity:0"
         style={{
-          stopColor: "#000",
+          stopColor: '#000',
           stopOpacity: 0,
         }}
       />
@@ -66,7 +66,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
     <path
       d="m362.314 253.301-.289.19c.214.844.642 1.618.642 2.509 0 3.625-1.854 7.01-4.896 8.969l-149.333 96a10.62 10.62 0 0 1-5.771 1.698c-1.75 0-3.521-.438-5.104-1.302l120.663 120.663c65.57-18.082 119.585-63.87 148.788-124.027l-104.7-104.7z"
       style={{
-        fill: "url(#a)",
+        fill: 'url(#a)',
       }}
     />
     <linearGradient
@@ -82,7 +82,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         offset={0}
         stopColor="#ffffff;stop-opacity:0.2"
         style={{
-          stopColor: "#fff",
+          stopColor: '#fff',
           stopOpacity: 0.2,
         }}
       />
@@ -90,7 +90,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         offset={1}
         stopColor="#ffffff;stop-opacity:0"
         style={{
-          stopColor: "#fff",
+          stopColor: '#fff',
           stopOpacity: 0,
         }}
       />
@@ -98,10 +98,10 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
     <path
       d="M256 0C114.833 0 0 114.844 0 256s114.833 256 256 256 256-114.844 256-256S397.167 0 256 0z"
       style={{
-        fill: "url(#b)",
+        fill: 'url(#b)',
       }}
     />
   </svg>
-);
-const Memo = memo(SvgComponent);
-export default Memo;
+)
+const Memo = memo(SvgComponent)
+export default Memo

@@ -1,7 +1,7 @@
 // Podcast app
 
 const uwuPod = () => {
-  return <div>uwuPod</div>;
-};
+  return <div>uwuPod</div>
+}
 
-export default uwuPod;
+export default uwuPod

@@ -1,17 +1,17 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import HandleBtn from "./HandleBtn";
+import type { Meta, StoryObj } from '@storybook/react'
+import HandleBtn from './HandleBtn'
 
 const meta: Meta<typeof HandleBtn> = {
-  title: "HandleBtn",
+  title: 'HandleBtn',
   component: HandleBtn,
-};
+}
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof HandleBtn>;
+type Story = StoryObj<typeof HandleBtn>
 
 export const WindowHandle: Story = {
   args: {
-    color: "red",
+    color: 'red',
   },
-};
+}

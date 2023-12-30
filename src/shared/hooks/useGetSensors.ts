@@ -1,5 +1,5 @@
-import { useSensor, useSensors } from "@dnd-kit/core";
-import { MouseSensor, TouchSensor } from "@utils/hackSensors";
+import { useSensor, useSensors } from '@dnd-kit/core'
+import { MouseSensor, TouchSensor } from '@utils/hackSensors'
 
 export const useGetSensors = () => {
   const sensors = useSensors(
@@ -14,6 +14,6 @@ export const useGetSensors = () => {
         tolerance: 5,
       },
     }),
-  );
-  return sensors;
-};
+  )
+  return sensors
+}

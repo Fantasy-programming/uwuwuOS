@@ -1,5 +1,5 @@
-import Navbar from "@components/Navbar";
-import DragArea from "./DragArea";
+import Navbar from '@components/Navbar'
+import DragArea from './DragArea'
 
 const Screen = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -7,7 +7,7 @@ const Screen = ({ children }: { children: React.ReactNode }) => {
       <Navbar />
       <DragArea>{children}</DragArea>
     </>
-  );
-};
+  )
+}
 
-export default Screen;
+export default Screen

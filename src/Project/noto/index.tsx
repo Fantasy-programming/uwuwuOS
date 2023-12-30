@@ -1,5 +1,5 @@
 const NotoIcon = () => {
-  return <div>Note taking app</div>;
-};
+  return <div>Note taking app</div>
+}
 
-export default NotoIcon;
+export default NotoIcon

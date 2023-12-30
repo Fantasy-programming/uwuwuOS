@@ -1,7 +1,7 @@
-import { SVGProps, memo } from "react";
+import { SVGProps, memo } from 'react'
 interface SVGRProps {
-  title?: string;
-  titleId?: string;
+  title?: string
+  titleId?: string
 }
 const SvgComponent = ({
   title,
@@ -53,8 +53,8 @@ const SvgComponent = ({
       data-original="#000000"
       style={{
         strokeWidth: 15,
-        strokeLinecap: "round",
-        strokeLinejoin: "round",
+        strokeLinecap: 'round',
+        strokeLinejoin: 'round',
         strokeMiterlimit: 10,
       }}
     />
@@ -69,8 +69,8 @@ const SvgComponent = ({
       data-original="#000000"
       style={{
         strokeWidth: 15,
-        strokeLinecap: "round",
-        strokeLinejoin: "round",
+        strokeLinecap: 'round',
+        strokeLinejoin: 'round',
         strokeMiterlimit: 10,
       }}
     />
@@ -85,12 +85,12 @@ const SvgComponent = ({
       data-original="#000000"
       style={{
         strokeWidth: 15,
-        strokeLinecap: "round",
-        strokeLinejoin: "round",
+        strokeLinecap: 'round',
+        strokeLinejoin: 'round',
         strokeMiterlimit: 10,
       }}
     />
   </svg>
-);
-const Memo = memo(SvgComponent);
-export default Memo;
+)
+const Memo = memo(SvgComponent)
+export default Memo

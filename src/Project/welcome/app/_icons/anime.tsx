@@ -1,7 +1,7 @@
-import { SVGProps, memo } from "react";
+import { SVGProps, memo } from 'react'
 interface SVGRProps {
-  title?: string;
-  titleId?: string;
+  title?: string
+  titleId?: string
 }
 const SvgComponent = ({
   title,
@@ -30,8 +30,8 @@ const SvgComponent = ({
         data-original="#c6c1c8"
         style={{
           fillOpacity: 1,
-          fillRule: "nonzero",
-          stroke: "none",
+          fillRule: 'nonzero',
+          stroke: 'none',
         }}
         transform="translate(487.762 437.73)"
       />
@@ -41,8 +41,8 @@ const SvgComponent = ({
         data-original="#665e66"
         style={{
           fillOpacity: 1,
-          fillRule: "nonzero",
-          stroke: "none",
+          fillRule: 'nonzero',
+          stroke: 'none',
         }}
         transform="translate(296.773 100.017)"
       />
@@ -52,8 +52,8 @@ const SvgComponent = ({
         data-original="#756e78"
         style={{
           fillOpacity: 1,
-          fillRule: "nonzero",
-          stroke: "none",
+          fillRule: 'nonzero',
+          stroke: 'none',
         }}
         transform="translate(368.907 100.017)"
       />
@@ -63,8 +63,8 @@ const SvgComponent = ({
         data-original="#ffece4"
         style={{
           fillOpacity: 1,
-          fillRule: "nonzero",
-          stroke: "none",
+          fillRule: 'nonzero',
+          stroke: 'none',
         }}
         transform="translate(32.5 411.367)"
       />
@@ -74,8 +74,8 @@ const SvgComponent = ({
         data-original="#ffddce"
         style={{
           fillOpacity: 1,
-          fillRule: "nonzero",
-          stroke: "none",
+          fillRule: 'nonzero',
+          stroke: 'none',
         }}
         transform="translate(478.138 412.73)"
       />
@@ -85,8 +85,8 @@ const SvgComponent = ({
         data-original="#ffffff"
         style={{
           fillOpacity: 1,
-          fillRule: "nonzero",
-          stroke: "none",
+          fillRule: 'nonzero',
+          stroke: 'none',
         }}
         transform="translate(383.344 322.326)"
       />
@@ -96,8 +96,8 @@ const SvgComponent = ({
         data-original="#f1f1f4"
         style={{
           fillOpacity: 1,
-          fillRule: "nonzero",
-          stroke: "none",
+          fillRule: 'nonzero',
+          stroke: 'none',
         }}
         transform="translate(439.5 258.077)"
       />
@@ -107,8 +107,8 @@ const SvgComponent = ({
         data-original="#ffffff"
         style={{
           fillOpacity: 1,
-          fillRule: "nonzero",
-          stroke: "none",
+          fillRule: 'nonzero',
+          stroke: 'none',
         }}
         transform="translate(128.417 322.327)"
       />
@@ -118,8 +118,8 @@ const SvgComponent = ({
         data-original="#756e78"
         style={{
           fillOpacity: 1,
-          fillRule: "nonzero",
-          stroke: "none",
+          fillRule: 'nonzero',
+          stroke: 'none',
         }}
         transform="translate(145.26 305.485)"
       />
@@ -129,8 +129,8 @@ const SvgComponent = ({
         data-original="#9dc6fb"
         style={{
           fillOpacity: 1,
-          fillRule: "nonzero",
-          stroke: "none",
+          fillRule: 'nonzero',
+          stroke: 'none',
         }}
         transform="translate(171.172 243.726)"
       />
@@ -140,8 +140,8 @@ const SvgComponent = ({
         data-original="#ffffff"
         style={{
           fillOpacity: 1,
-          fillRule: "nonzero",
-          stroke: "none",
+          fillRule: 'nonzero',
+          stroke: 'none',
         }}
         transform="translate(146.209 289.459)"
       />
@@ -151,8 +151,8 @@ const SvgComponent = ({
         data-original="#e4936b"
         style={{
           fillOpacity: 1,
-          fillRule: "nonzero",
-          stroke: "none",
+          fillRule: 'nonzero',
+          stroke: 'none',
         }}
         transform="translate(286.09 303.092)"
       />
@@ -162,8 +162,8 @@ const SvgComponent = ({
         data-original="#e4936b"
         style={{
           fillOpacity: 1,
-          fillRule: "nonzero",
-          stroke: "none",
+          fillRule: 'nonzero',
+          stroke: 'none',
         }}
         transform="translate(225.91 303.092)"
       />
@@ -173,8 +173,8 @@ const SvgComponent = ({
         data-original="#756e78"
         style={{
           fillOpacity: 1,
-          fillRule: "nonzero",
-          stroke: "none",
+          fillRule: 'nonzero',
+          stroke: 'none',
         }}
         transform="translate(366.769 305.485)"
       />
@@ -184,8 +184,8 @@ const SvgComponent = ({
         data-original="#9dc6fb"
         style={{
           fillOpacity: 1,
-          fillRule: "nonzero",
-          stroke: "none",
+          fillRule: 'nonzero',
+          stroke: 'none',
         }}
         transform="translate(340.828 243.726)"
       />
@@ -195,8 +195,8 @@ const SvgComponent = ({
         data-original="#ffffff"
         style={{
           fillOpacity: 1,
-          fillRule: "nonzero",
-          stroke: "none",
+          fillRule: 'nonzero',
+          stroke: 'none',
         }}
         transform="translate(367.746 289.459)"
       />
@@ -211,10 +211,10 @@ const SvgComponent = ({
         data-original="#000000"
         style={{
           strokeWidth: 15,
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
           strokeMiterlimit: 10,
-          strokeDasharray: "none",
+          strokeDasharray: 'none',
           strokeOpacity: 1,
         }}
         transform="translate(307.878 100.017)"
@@ -230,10 +230,10 @@ const SvgComponent = ({
         data-original="#000000"
         style={{
           strokeWidth: 15,
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
           strokeMiterlimit: 10,
-          strokeDasharray: "none",
+          strokeDasharray: 'none',
           strokeOpacity: 1,
         }}
         transform="translate(45.842 412.73)"
@@ -249,10 +249,10 @@ const SvgComponent = ({
         data-original="#000000"
         style={{
           strokeWidth: 15,
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
           strokeMiterlimit: 10,
-          strokeDasharray: "none",
+          strokeDasharray: 'none',
           strokeOpacity: 1,
         }}
         transform="translate(487.762 437.73)"
@@ -268,10 +268,10 @@ const SvgComponent = ({
         data-original="#000000"
         style={{
           strokeWidth: 15,
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
           strokeMiterlimit: 10,
-          strokeDasharray: "none",
+          strokeDasharray: 'none',
           strokeOpacity: 1,
         }}
         transform="translate(178.791 214.834)"
@@ -287,10 +287,10 @@ const SvgComponent = ({
         data-original="#000000"
         style={{
           strokeWidth: 15,
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
           strokeMiterlimit: 10,
-          strokeDasharray: "none",
+          strokeDasharray: 'none',
           strokeOpacity: 1,
         }}
         transform="translate(145.26 305.485)"
@@ -306,10 +306,10 @@ const SvgComponent = ({
         data-original="#000000"
         style={{
           strokeWidth: 15,
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
           strokeMiterlimit: 10,
-          strokeDasharray: "none",
+          strokeDasharray: 'none',
           strokeOpacity: 1,
         }}
         transform="translate(253.592 308.968)"
@@ -325,10 +325,10 @@ const SvgComponent = ({
         data-original="#000000"
         style={{
           strokeWidth: 15,
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
           strokeMiterlimit: 10,
-          strokeDasharray: "none",
+          strokeDasharray: 'none',
           strokeOpacity: 1,
         }}
         transform="translate(119.302 243.735)"
@@ -344,10 +344,10 @@ const SvgComponent = ({
         data-original="#000000"
         style={{
           strokeWidth: 15,
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
           strokeMiterlimit: 10,
-          strokeDasharray: "none",
+          strokeDasharray: 'none',
           strokeOpacity: 1,
         }}
         transform="translate(146.209 289.459)"
@@ -363,10 +363,10 @@ const SvgComponent = ({
         data-original="#000000"
         style={{
           strokeWidth: 15,
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
           strokeMiterlimit: 10,
-          strokeDasharray: "none",
+          strokeDasharray: 'none',
           strokeOpacity: 1,
         }}
         transform="translate(145.231 268.59)"
@@ -382,10 +382,10 @@ const SvgComponent = ({
         data-original="#000000"
         style={{
           strokeWidth: 15,
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
           strokeMiterlimit: 10,
-          strokeDasharray: "none",
+          strokeDasharray: 'none',
           strokeOpacity: 1,
         }}
         transform="translate(341.058 350.448)"
@@ -401,10 +401,10 @@ const SvgComponent = ({
         data-original="#000000"
         style={{
           strokeWidth: 15,
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
           strokeMiterlimit: 10,
-          strokeDasharray: "none",
+          strokeDasharray: 'none',
           strokeOpacity: 1,
         }}
         transform="translate(225.91 303.092)"
@@ -420,10 +420,10 @@ const SvgComponent = ({
         data-original="#000000"
         style={{
           strokeWidth: 15,
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
           strokeMiterlimit: 10,
-          strokeDasharray: "none",
+          strokeDasharray: 'none',
           strokeOpacity: 1,
         }}
         transform="translate(333.236 214.834)"
@@ -439,10 +439,10 @@ const SvgComponent = ({
         data-original="#000000"
         style={{
           strokeWidth: 15,
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
           strokeMiterlimit: 10,
-          strokeDasharray: "none",
+          strokeDasharray: 'none',
           strokeOpacity: 1,
         }}
         transform="translate(366.769 305.485)"
@@ -458,10 +458,10 @@ const SvgComponent = ({
         data-original="#000000"
         style={{
           strokeWidth: 15,
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
           strokeMiterlimit: 10,
-          strokeDasharray: "none",
+          strokeDasharray: 'none',
           strokeOpacity: 1,
         }}
         transform="translate(392.698 243.735)"
@@ -477,10 +477,10 @@ const SvgComponent = ({
         data-original="#000000"
         style={{
           strokeWidth: 15,
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
           strokeMiterlimit: 10,
-          strokeDasharray: "none",
+          strokeDasharray: 'none',
           strokeOpacity: 1,
         }}
         transform="translate(367.746 289.459)"
@@ -496,10 +496,10 @@ const SvgComponent = ({
         data-original="#000000"
         style={{
           strokeWidth: 15,
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
           strokeMiterlimit: 10,
-          strokeDasharray: "none",
+          strokeDasharray: 'none',
           strokeOpacity: 1,
         }}
         transform="translate(366.769 268.59)"
@@ -515,10 +515,10 @@ const SvgComponent = ({
         data-original="#000000"
         style={{
           strokeWidth: 15,
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
           strokeMiterlimit: 10,
-          strokeDasharray: "none",
+          strokeDasharray: 'none',
           strokeOpacity: 1,
         }}
         transform="translate(265 235.436)"
@@ -534,10 +534,10 @@ const SvgComponent = ({
         data-original="#000000"
         style={{
           strokeWidth: 15,
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
           strokeMiterlimit: 10,
-          strokeDasharray: "none",
+          strokeDasharray: 'none',
           strokeOpacity: 1,
         }}
         transform="translate(290.61 136.764)"
@@ -553,16 +553,16 @@ const SvgComponent = ({
         data-original="#000000"
         style={{
           strokeWidth: 15,
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
+          strokeLinecap: 'round',
+          strokeLinejoin: 'round',
           strokeMiterlimit: 10,
-          strokeDasharray: "none",
+          strokeDasharray: 'none',
           strokeOpacity: 1,
         }}
         transform="translate(215.227 100.017)"
       />
     </g>
   </svg>
-);
-const Memo = memo(SvgComponent);
-export default Memo;
+)
+const Memo = memo(SvgComponent)
+export default Memo
