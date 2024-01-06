@@ -6,48 +6,28 @@
   "scripts": {
     "prepare": "husky install",
     "dev": "NODE_ENV=development vite",
+    "preview": "vite preview",
+    "build": "NODE_ENV=production tsc && vite build",
     "test": "vitest",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "knip": "knip",
-    "knip:prod": "knip --production",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "preview": "vite preview",
-    "build": "NODE_ENV=production tsc && vite build"
+    "knip:prod": "knip --production"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.1.0",
     "@dnd-kit/utilities": "^3.2.2",
+    "react-rnd": "^10.4.1",
     "clsx": "^2.0.0",
     "focus-trap-react": "^10.2.3",
+    "use-sound": "^4.0.1",
     "immer": "^10.0.3",
+    "zustand": "^4.4.7",
     "million": "^2.6.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-rnd": "^10.4.1",
-    "use-sound": "^4.0.1",
-    "zustand": "^4.4.7"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run knip"
-    }
-  },
-  "prettier": {
-    "semi": false,
-    "arrowParens": "avoid",
-    "singleQuote": true
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.6.4",
-    "@storybook/addon-interactions": "^7.6.4",
-    "@storybook/addon-links": "^7.6.4",
-    "@storybook/addon-onboarding": "^1.0.9",
-    "@storybook/blocks": "^7.6.4",
-    "@storybook/react": "^7.6.4",
-    "@storybook/react-vite": "^7.6.4",
-    "@storybook/test": "^7.6.4",
     "@testing-library/jest-dom": "^6.1.5",
     "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^14.5.1",
@@ -70,9 +50,18 @@
     "prettier": "^3.1.0",
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2",
-    "storybook": "^7.6.4",
     "typescript": "^5.3.2",
     "vite": "^5.0.0",
     "vitest": "^1.0.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run knip"
+    }
+  },
+  "prettier": {
+    "semi": false,
+    "arrowParens": "avoid",
+    "singleQuote": true
   }
 }

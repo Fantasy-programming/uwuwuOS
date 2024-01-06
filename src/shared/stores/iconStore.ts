@@ -20,7 +20,7 @@ interface IconsActions {
 
 export const useIconStore = create<IconsState & IconsActions>()(
   immer(set => ({
-    apps: 0,
+    apps: applist.length,
     icons: applist,
     moveIcon: (appName: string, newPos: string) =>
       set(state => {

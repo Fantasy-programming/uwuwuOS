@@ -1,3 +1,5 @@
+// Calculator app
+
 const calcIcon = () => {
   return <div>calcIcon</div>
 }
