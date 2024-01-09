@@ -60,7 +60,7 @@
     }
   },
   "prettier": {
-    "semi": false,
+    "semi": true,
     "arrowParens": "avoid",
     "singleQuote": true
   }
