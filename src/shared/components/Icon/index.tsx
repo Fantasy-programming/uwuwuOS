@@ -1,41 +1,41 @@
-import { CSS } from '@dnd-kit/utilities'
+import { CSS } from '@dnd-kit/utilities';
 
-import { useDraggable } from '@dnd-kit/core'
-import useDoubleClick from '@hooks/useDoubleClick'
-import { usewindowStore, WindowState } from '@stores/windowStore'
+import { useDraggable } from '@dnd-kit/core';
+import useDoubleClick from '@hooks/useDoubleClick';
+import { usewindowStore, WindowState } from '@stores/windowStore';
 
-import Style from './Icon.module.scss'
+import Style from './Icon.module.scss';
 
 interface IconProps {
-  children: React.ReactNode
-  title: string
-  id: string
-  app: WindowState
+  children: React.ReactNode;
+  title: string;
+  id: string;
+  app: WindowState;
 }
 
 const Icon = ({ children, title, id, app }: IconProps) => {
-  const { spawnProcess } = usewindowStore()
+  const { spawnProcess } = usewindowStore();
 
   const clickHandle = useDoubleClick(
     () => null,
     () => {
-      spawnProcess(app)
+      spawnProcess(app);
     },
-  )
+  );
 
   const handleEnter = (event: React.KeyboardEvent<HTMLElement>) => {
     if (event.key === 'Enter' || event.key === ' ') {
-      spawnProcess(app)
+      spawnProcess(app);
     }
-  }
+  };
 
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id: id,
-  })
+  });
 
   const style = {
     transform: CSS.Translate.toString(transform),
-  }
+  };
 
   return (
     <>
@@ -55,7 +55,7 @@ const Icon = ({ children, title, id, app }: IconProps) => {
         <div className={Style.overlay} />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Icon
+export default Icon;

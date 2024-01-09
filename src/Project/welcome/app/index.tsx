@@ -1,9 +1,9 @@
-import Message from './_icons/message'
-import Anime from './_icons/anime'
-import Clock from './_icons/clock'
-import Nudes from './_icons/nudes'
+import Message from './_icons/message';
+import Anime from './_icons/anime';
+import Clock from './_icons/clock';
+import Nudes from './_icons/nudes';
 
-import Style from './Welcome.module.scss'
+import Style from './Welcome.module.scss';
 
 // TODO: Set minimum width and minimum height for the window
 
@@ -55,7 +55,7 @@ const content = () => {
         <button type="button">I hate it</button>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default content
+export default content;

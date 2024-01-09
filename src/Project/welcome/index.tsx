@@ -1,5 +1,5 @@
-import Shortcut from '@components/Icon'
-import Icon from '@assets/Icons/Welcome'
+import Shortcut from '@components/Icon';
+import Icon from '@assets/Icons/Welcome';
 
 // Welcome app for new users
 
@@ -10,13 +10,13 @@ const PlayIcon = () => {
     appName: 'Welcome',
     width: '658px',
     height: '490px',
-  }
+  };
 
   return (
     <Shortcut id="Welcome" title="welcome" app={welcomeProcess}>
       <Icon width={48} height={48} />
     </Shortcut>
-  )
-}
+  );
+};
 
-export default PlayIcon
+export default PlayIcon;

@@ -1,26 +1,26 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import FocusTrap from 'focus-trap-react'
-import Button from './_component/Button'
+import FocusTrap from 'focus-trap-react';
+import Button from './_component/Button';
 
 //images
-import crashImg from './_images/crash.png'
-import tom1Img from './_images/tom1.png'
-import tom2Img from './_images/tom2.png'
-import tom3Img from './_images/tom3.png'
-import tom4Img from './_images/tom4.png'
-import bassImg from './_images/kick.png'
-import snareImg from './_images/snare.png'
+import crashImg from './_images/crash.png';
+import tom1Img from './_images/tom1.png';
+import tom2Img from './_images/tom2.png';
+import tom3Img from './_images/tom3.png';
+import tom4Img from './_images/tom4.png';
+import bassImg from './_images/kick.png';
+import snareImg from './_images/snare.png';
 
 // sound
-import crash from './_sound/crash.mp3'
-import tom1 from './_sound/tom-1.mp3'
-import tom2 from './_sound/tom-2.mp3'
-import tom3 from './_sound/tom-3.mp3'
-import tom4 from './_sound/tom-4.mp3'
-import bass from './_sound/kick-bass.mp3'
-import snare from './_sound/snare.mp3'
+import crash from './_sound/crash.mp3';
+import tom1 from './_sound/tom-1.mp3';
+import tom2 from './_sound/tom-2.mp3';
+import tom3 from './_sound/tom-3.mp3';
+import tom4 from './_sound/tom-4.mp3';
+import bass from './_sound/kick-bass.mp3';
+import snare from './_sound/snare.mp3';
 
-import Style from './Drumkit.module.scss'
+import Style from './Drumkit.module.scss';
 
 const sounds: Record<string, string> = {
   w: crash,
@@ -30,16 +30,16 @@ const sounds: Record<string, string> = {
   j: tom4,
   k: bass,
   l: snare,
-}
+};
 
-const keys = Object.keys(sounds)
+const keys = Object.keys(sounds);
 
 const Content = () => {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (keys.includes(event.key)) {
-      new Audio(sounds[event.key]).play()
+      new Audio(sounds[event.key]).play();
     }
-  }
+  };
   return (
     <FocusTrap>
       <div className={Style.frame} onKeyDown={handleKeyDown} role="application">
@@ -71,7 +71,7 @@ const Content = () => {
         </main>
       </div>
     </FocusTrap>
-  )
-}
+  );
+};
 
-export default Content
+export default Content;

@@ -1,15 +1,15 @@
-import Style from '../Drumkit.module.scss'
+import Style from '../Drumkit.module.scss';
 
 interface ButtonProps {
-  children: React.ReactNode
-  bg: string
-  sound: string
+  children: React.ReactNode;
+  bg: string;
+  sound: string;
 }
 
 const Button: React.FC<ButtonProps> = ({ children, bg, sound }) => {
   const play = (audioSrc: string) => {
-    new Audio(audioSrc).play()
-  }
+    new Audio(audioSrc).play();
+  };
 
   return (
     <button
@@ -20,7 +20,7 @@ const Button: React.FC<ButtonProps> = ({ children, bg, sound }) => {
     >
       {children}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

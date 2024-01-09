@@ -1,7 +1,7 @@
 // Weather app
 
 const weatherIcon = () => {
-  return <div>weatherIcon</div>
-}
+  return <div>weatherIcon</div>;
+};
 
-export default weatherIcon
+export default weatherIcon;

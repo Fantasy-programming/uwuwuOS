@@ -1,7 +1,7 @@
-import { SVGProps, memo } from 'react'
+import { SVGProps, memo } from 'react';
 interface SVGRProps {
-  title?: string
-  titleId?: string
+  title?: string;
+  titleId?: string;
 }
 const SvgComponent = ({
   title,
@@ -54,6 +54,6 @@ const SvgComponent = ({
       />
     </g>
   </svg>
-)
-const Memo = memo(SvgComponent)
-export default Memo
+);
+const Memo = memo(SvgComponent);
+export default Memo;

@@ -1,14 +1,14 @@
 // Global Styles
-import './design/normalize.scss'
-import './design/globals.scss'
+import './design/normalize.scss';
+import './design/globals.scss';
 
-import Screen from '@components/Wrapper/Screen'
-import Window from '@components/Window/Window'
+import Screen from '@components/Wrapper/Screen';
+import Window from '@components/Window/Window';
 
-import { usewindowStore } from '@stores/windowStore'
+import { usewindowStore } from '@stores/windowStore';
 
 function App() {
-  const windows = usewindowStore(state => state.windows)
+  const windows = usewindowStore(state => state.windows);
 
   return (
     <>
@@ -23,11 +23,11 @@ function App() {
               width={window.width}
               height={window.height}
             />
-          )
+          );
         })}
       </Screen>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

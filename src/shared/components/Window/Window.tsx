@@ -1,12 +1,12 @@
-import { Rnd } from 'react-rnd'
-import { useState } from 'react'
-import useApp from '@hooks/useApp'
+import { Rnd } from 'react-rnd';
+import { useState } from 'react';
+import useApp from '@hooks/useApp';
 
-import { Handle } from '@components/Handle'
+import { Handle } from '@components/Handle';
 
-import Style from './Window.module.scss'
+import Style from './Window.module.scss';
 
-import { type WindowState } from '@stores/windowStore'
+import { type WindowState } from '@stores/windowStore';
 
 const Window = ({
   name,
@@ -22,9 +22,9 @@ const Window = ({
     y: pos_y,
     width: width,
     height: height,
-  })
+  });
 
-  const Content = useApp({ name: appName })
+  const Content = useApp({ name: appName });
 
   return (
     <Rnd
@@ -39,7 +39,7 @@ const Window = ({
       position={{ x: window.x, y: window.y }}
       dragHandleClassName={'windows__handle'}
       onDragStop={(_e, d) => {
-        setWindow({ ...window, x: d.x, y: d.y })
+        setWindow({ ...window, x: d.x, y: d.y });
       }}
       onResize={(_e, _direction, ref, _delta, position) => {
         setWindow({
@@ -47,13 +47,13 @@ const Window = ({
           width: ref.style.width,
           height: ref.style.height,
           ...position,
-        })
+        });
       }}
     >
       <Handle name={name} id={id} />
       <Content />
     </Rnd>
-  )
-}
+  );
+};
 
-export default Window
+export default Window;

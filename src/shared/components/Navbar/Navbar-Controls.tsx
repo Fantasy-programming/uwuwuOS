@@ -1,5 +1,5 @@
 const Controls = () => {
-  return <div>Start</div>
-}
+  return <div>Start</div>;
+};
 
-export default Controls
+export default Controls;

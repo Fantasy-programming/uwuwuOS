@@ -1,7 +1,7 @@
 // File explorer
 
 const uwuFinder = () => {
-  return <div>uwuFinder</div>
-}
+  return <div>uwuFinder</div>;
+};
 
-export default uwuFinder
+export default uwuFinder;
