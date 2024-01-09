@@ -3,6 +3,7 @@ import { usewindowStore } from '@stores/windowStore'
 
 const WindowsArea = () => {
   const windows = usewindowStore(state => state.windows)
+
   return (
     <>
       {windows.map(window => {
@@ -14,6 +15,9 @@ const WindowsArea = () => {
             id={window.id}
             width={window.width}
             height={window.height}
+            minimized={window.minimized}
+            maximized={window.maximized}
+            focused={window.focused}
           />
         )
       })}

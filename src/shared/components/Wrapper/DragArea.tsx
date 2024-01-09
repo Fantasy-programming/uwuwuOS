@@ -11,7 +11,7 @@ interface GridProps {
   cols: number[]
 }
 
-const DragArea: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const DragArea: React.FC = () => {
   const sensors = useGetSensors()
   const moveIcon = useIconStore(state => state.moveIcon)
 
@@ -28,7 +28,6 @@ const DragArea: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     <main className="Frame">
       <DndContext onDragEnd={handleDragEnd} sensors={sensors}>
         <Grid rows={rows} cols={cols} />
-        {children}
       </DndContext>
     </main>
   )
