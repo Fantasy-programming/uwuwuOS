@@ -1,22 +1,19 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import useKeyboardInput from '../_utils/useKeyboardInput';
+import useKeyboardInput from '@/shared/hooks/useKeyboardInput';
+
+import { SNAKE_SPEED, GRID_WIDTH, GRID_HEIGHT } from '../_utils/global';
+import { PageProps, Segment } from '../_utils/types';
 
 import {
   randomFoodPosition,
   isFoodEaten,
   checkCollision,
 } from '../_utils/utils';
-import {
-  SNAKE_SPEED,
-  GRID_WIDTH,
-  GRID_HEIGHT,
-  Segment,
-} from '../_utils/global';
 
-import GameOver from './GameOver';
-import Gamebar from './Gamebar';
+import GameOver from './_subcomponents/GameOver';
+import Gamebar from './_subcomponents/Gamebar';
 import Food from '../_icons/Food';
-import Snakebody from './Snakebody';
+import Snakebody from './_subcomponents/Snakebody';
 
 import Style from './Game.module.scss';
 
@@ -25,7 +22,7 @@ const gameboardDimensions = {
   gridTemplateRows: `repeat(${GRID_HEIGHT}, 1fr)`,
 };
 
-const Game = () => {
+const Game = ({ goto }: PageProps) => {
   const [isOver, setIsOver] = useState<boolean>(false);
   const [isPaused, setIsPaused] = useState<boolean>(false);
 
@@ -123,7 +120,13 @@ const Game = () => {
 
   return (
     <div className={Style.game}>
-      {isOver && <GameOver score={score} onRestart={() => setIsOver(false)} />}
+      {isOver && (
+        <GameOver
+          score={score}
+          goto={goto}
+          onRestart={() => setIsOver(false)}
+        />
+      )}
       <Gamebar
         isPaused={isPaused}
         score={score}

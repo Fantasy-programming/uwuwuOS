@@ -1,4 +1,5 @@
-import { Segment, GRID_WIDTH, GRID_HEIGHT } from './global';
+import { GRID_WIDTH, GRID_HEIGHT } from './global';
+import { Segment } from './types';
 
 export const randomFoodPosition = (snakebody: Segment[]): Segment => {
   let newFoodPosition: Segment;

@@ -1,6 +1,6 @@
 import { memo } from 'react';
-import { Segment } from '../_utils/global';
-import Style from './Game.module.scss';
+import { Segment } from '../../_utils/types';
+import Style from '../Game.module.scss';
 
 const Snakebody = memo(({ segments }: { segments: Segment[] }) => {
   return (

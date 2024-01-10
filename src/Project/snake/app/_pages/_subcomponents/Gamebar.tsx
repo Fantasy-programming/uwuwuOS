@@ -1,7 +1,7 @@
 import { memo } from 'react';
-import Play from '../_icons/Play';
-import Pause from '../_icons/Pause';
-import Style from './Game.module.scss';
+import Play from '../../_icons/Play';
+import Pause from '../../_icons/Pause';
+import Style from '../Game.module.scss';
 
 interface GamebarProps {
   isPaused: boolean;
