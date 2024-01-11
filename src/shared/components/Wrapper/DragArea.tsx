@@ -11,9 +11,9 @@ interface GridProps {
   cols: number[];
 }
 
-const DragArea: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const sensors = useGetSensors();
-  const { moveIcon } = useIconStore();
+const DragArea: React.FC = () => {
+  const sensors = useGetSensors()
+  const moveIcon = useIconStore(state => state.moveIcon)
 
   // over = place, active = curren icon
   function handleDragEnd({ over, active }: DragEndEvent) {
@@ -28,7 +28,6 @@ const DragArea: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     <main className="Frame">
       <DndContext onDragEnd={handleDragEnd} sensors={sensors}>
         <Grid rows={rows} cols={cols} />
-        {children}
       </DndContext>
     </main>
   );
@@ -43,7 +42,7 @@ const Grid: React.FC<GridProps> = ({ rows, cols }) => {
             return (
               <Place
                 key={`${rowIndex}-${colIndex}`}
-                id={`${rowIndex}-${colIndex}`}
+                position={`${rowIndex}-${colIndex}`}
               />
             );
           })}
@@ -53,9 +52,9 @@ const Grid: React.FC<GridProps> = ({ rows, cols }) => {
   );
 };
 
-const Place: React.FC<{ id: string }> = ({ id }) => {
-  const IconComponent = useIcon(id);
-  const { setNodeRef } = useDroppable({ id: id });
+const Place: React.FC<{ position: string }> = ({ position }) => {
+  const IconComponent = useIcon(position)
+  const { setNodeRef } = useDroppable({ id: position })
 
   return (
     <div ref={setNodeRef} className={Style.place}>

@@ -2,8 +2,9 @@
   background-color: var(--primary-light);
   border-bottom: 1px solid #ddd;
 
-  height: 30px;
+  max-height: 30px;
   width: 100%;
+  padding: 2px;
 
   display: flex;
   align-items: center;
@@ -13,7 +14,6 @@
     align-items: center;
     display: flex;
     justify-content: center;
-    // margin-left: 10px;
     width: 100px;
   }
 

@@ -2,29 +2,21 @@
 import './design/normalize.scss';
 import './design/globals.scss';
 
-import Screen from '@components/Wrapper/Screen';
-import Window from '@components/Window/Window';
+import Screen from '@components/Wrapper/Screen'
 
-import { usewindowStore } from '@stores/windowStore';
+import Navbar from '@components/Navbar'
+import DragArea from '@components/Wrapper/DragArea'
+import WindowsArea from '@components/Wrapper/WindowsArea'
 
 function App() {
-  const windows = usewindowStore(state => state.windows);
-
   return (
     <>
       <Screen>
-        {windows.map(window => {
-          return (
-            <Window
-              key={window.id}
-              name={window.name}
-              appName={window.appName}
-              id={window.id}
-              width={window.width}
-              height={window.height}
-            />
-          );
-        })}
+        <Navbar />
+        <div className="WorkArea">
+          <DragArea />
+          <WindowsArea />
+        </div>
       </Screen>
     </>
   );

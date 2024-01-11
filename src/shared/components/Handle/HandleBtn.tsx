@@ -19,7 +19,7 @@ const HandleBtn = ({ color = 'red', onClick }: HandleBtnProps) => {
     [Styles.maximize__button]: color === HandleBtnColor.green,
   });
 
-  return <button className={btnClass} onClick={onClick}></button>;
-};
+  return <button className={btnClass} type="button" onClick={onClick} />
+}
 
 export default HandleBtn;
