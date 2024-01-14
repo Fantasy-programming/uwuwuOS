@@ -1,8 +1,8 @@
-import Window from '@components/Window/Window'
-import { usewindowStore } from '@stores/windowStore'
+import Window from '@components/Window/Window';
+import { usewindowStore } from '@stores/windowStore';
 
 const WindowsArea = () => {
-  const windows = usewindowStore(state => state.windows)
+  const windows = usewindowStore(state => state.windows);
 
   return (
     <>
@@ -19,10 +19,10 @@ const WindowsArea = () => {
             maximized={window.maximized}
             focused={window.focused}
           />
-        )
+        );
       })}
     </>
-  )
-}
+  );
+};
 
-export default WindowsArea
+export default WindowsArea;

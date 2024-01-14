@@ -12,8 +12,8 @@ interface GridProps {
 }
 
 const DragArea: React.FC = () => {
-  const sensors = useGetSensors()
-  const moveIcon = useIconStore(state => state.moveIcon)
+  const sensors = useGetSensors();
+  const moveIcon = useIconStore(state => state.moveIcon);
 
   // over = place, active = curren icon
   function handleDragEnd({ over, active }: DragEndEvent) {
@@ -53,8 +53,8 @@ const Grid: React.FC<GridProps> = ({ rows, cols }) => {
 };
 
 const Place: React.FC<{ position: string }> = ({ position }) => {
-  const IconComponent = useIcon(position)
-  const { setNodeRef } = useDroppable({ id: position })
+  const IconComponent = useIcon(position);
+  const { setNodeRef } = useDroppable({ id: position });
 
   return (
     <div ref={setNodeRef} className={Style.place}>

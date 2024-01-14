@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  height: calc(100% - 20px);
+  width: 100%;
+  padding: 3rem;
+
+  main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      padding: 1rem 0;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.sound {
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+
+    span {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.themes {
+  label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    text-transform: uppercase;
+  }
+}
+
+.snakeImg {
+  background-image: url('./_subcomponents/img3.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-grow: 2;
+}

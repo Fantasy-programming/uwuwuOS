@@ -1,18 +1,32 @@
 .handle__button {
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  height: 0.8rem;
+  width: 0.8rem;
   border-radius: 50%;
-  height: 15px;
-  margin: 0 10px;
-  width: 15px;
+
+  background-color: var(--bgcolor);
+  transition: transform 100ms ease-in;
 }
 
 .close__button {
-  background-color: #ff5f56;
+  --bgcolor: #ff5f56;
+  --border-color: #e0443e;
 }
 
 .maximize__button {
-  background-color: #27c93f;
+  --bgcolor: #27c93f;
+  --border-color: #1aab29;
+
+  :global(svg) {
+    transform: rotate(90deg);
+  }
 }
 
 .minimize__button {
-  background-color: #ffbd2e;
+  --bgcolor: #ffbd2e;
+  --border-color: #dea123;
 }

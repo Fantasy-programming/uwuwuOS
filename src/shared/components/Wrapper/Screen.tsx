@@ -1,5 +1,5 @@
 const Screen = ({ children }: { children: React.ReactNode }) => {
-  return <>{children}</>
-}
+  return <>{children}</>;
+};
 
 export default Screen;

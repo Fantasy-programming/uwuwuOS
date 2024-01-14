@@ -1,16 +1,17 @@
 /// <reference types="vitest" />
 
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
-import { VitePWA } from 'vite-plugin-pwa'
-import million from 'million/compiler'
-import sass from 'sass'
-import path from 'path'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+import { VitePWA } from 'vite-plugin-pwa';
+// import million from 'million/compiler';
+import pluginPurgeCss from '@mojojoejo/vite-plugin-purgecss';
+import sass from 'sass';
+import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    million.vite({ auto: true }),
+    // million.vite({ auto: true }),
     react(),
     VitePWA({
       includeAssets: ['assets/*'],
@@ -48,6 +49,9 @@ export default defineConfig({
         ],
       },
     }),
+    pluginPurgeCss({
+      variables: true,
+    }),
   ],
   css: {
     preprocessorOptions: {
@@ -73,4 +77,4 @@ export default defineConfig({
       '@utils': path.resolve(__dirname, './src/shared/utils'),
     },
   },
-})
+});

@@ -1,6 +1,7 @@
 import { GRID_WIDTH, GRID_HEIGHT } from './global';
 import { Segment } from './types';
 
+/** Generate a random position for food */
 export const randomFoodPosition = (snakebody: Segment[]): Segment => {
   let newFoodPosition: Segment;
 
@@ -19,6 +20,7 @@ export const randomFoodPosition = (snakebody: Segment[]): Segment => {
   return newFoodPosition;
 };
 
+/** Check if food has been eaten */
 export const isFoodEaten = (head: Segment, food: Segment): boolean => {
   if (!head || !food) {
     return false;
@@ -26,6 +28,7 @@ export const isFoodEaten = (head: Segment, food: Segment): boolean => {
   return head.x === food.x && head.y === food.y;
 };
 
+/** Check if snake has collided with bounds or itself */
 export const checkCollision = (snakebody: Segment[]): boolean => {
   const head = snakebody[0];
 
@@ -33,7 +36,7 @@ export const checkCollision = (snakebody: Segment[]): boolean => {
   if (
     head.x > GRID_WIDTH ||
     head.x <= 0 ||
-    head.y >= GRID_HEIGHT ||
+    head.y > GRID_HEIGHT ||
     head.y <= 0
   ) {
     return true;

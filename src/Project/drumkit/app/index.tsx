@@ -1,5 +1,5 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import FocusTrap from 'focus-trap-react';
+import useKeyboardInput from '@/shared/hooks/useKeyboardInput';
+
 import Button from './_component/Button';
 
 //images
@@ -35,42 +35,42 @@ const sounds: Record<string, string> = {
 const keys = Object.keys(sounds);
 
 const Content = () => {
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    if (keys.includes(event.key)) {
-      new Audio(sounds[event.key]).play();
+  const handleKeys = (key: string) => {
+    if (keys.includes(key)) {
+      new Audio(sounds[key]).play();
     }
   };
+  useKeyboardInput(handleKeys);
+
   return (
-    <FocusTrap>
-      <div className={Style.frame} onKeyDown={handleKeyDown} role="application">
-        <main className={Style.game}>
-          <h1>Drumkit</h1>
-          <div className={Style.drumSet}>
-            <Button sound={crash} bg={crashImg}>
-              w
-            </Button>
-            <Button sound={tom1} bg={tom1Img}>
-              a
-            </Button>
-            <Button sound={tom2} bg={tom2Img}>
-              s
-            </Button>
-            <Button sound={tom3} bg={tom3Img}>
-              d
-            </Button>
-            <Button sound={tom4} bg={tom4Img}>
-              j
-            </Button>
-            <Button sound={bass} bg={bassImg}>
-              k
-            </Button>
-            <Button sound={snare} bg={snareImg}>
-              l
-            </Button>
-          </div>
-        </main>
-      </div>
-    </FocusTrap>
+    <div className={Style.frame} role="application">
+      <main className={Style.game}>
+        <h1>Drumkit</h1>
+        <div className={Style.drumSet}>
+          <Button sound={crash} bg={crashImg}>
+            w
+          </Button>
+          <Button sound={tom1} bg={tom1Img}>
+            a
+          </Button>
+          <Button sound={tom2} bg={tom2Img}>
+            s
+          </Button>
+          <Button sound={tom3} bg={tom3Img}>
+            d
+          </Button>
+          <Button sound={tom4} bg={tom4Img}>
+            j
+          </Button>
+          <Button sound={bass} bg={bassImg}>
+            k
+          </Button>
+          <Button sound={snare} bg={snareImg}>
+            l
+          </Button>
+        </div>
+      </main>
+    </div>
   );
 };
 

@@ -1,9 +1,9 @@
-import { WindowState } from '@/shared/stores/windowStore'
+import { WindowState } from '@/shared/stores/windowStore';
 
 const Context = ({ current }: { current: WindowState | undefined }) => {
-  if (!current) return <div>/home/fun/ - Desktop</div>
+  if (!current) return <div>/home/fun/ - Desktop</div>;
 
-  return <div>/home/fun/ - {current.appName}</div>
-}
+  return <div>/home/fun/ - {current.appName}</div>;
+};
 
 export default Context;

@@ -16,9 +16,8 @@ const Gamebar = memo(({ isPaused, handlePause, score }: GamebarProps) => {
         <button type="button" onClick={handlePause}>
           {isPaused ? <Pause /> : <Play />}
         </button>
-        <span>{score}</span>
       </div>
-      <div className={Style.snakeScore}>13</div>
+      <span className={Style.snakeScore}>{score}</span>
     </header>
   );
 });

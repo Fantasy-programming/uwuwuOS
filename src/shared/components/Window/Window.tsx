@@ -1,9 +1,9 @@
-import { memo } from 'react'
-import { Rnd, RndDragCallback, RndResizeCallback } from 'react-rnd'
-import { useState } from 'react'
-import useApp from '@hooks/useApp'
-import useWindowSize from '@/shared/hooks/useWindowSize'
-import { usewindowStore } from '@stores/windowStore'
+import { memo } from 'react';
+import { Rnd, RndDragCallback, RndResizeCallback } from 'react-rnd';
+import { useState } from 'react';
+import useApp from '@hooks/useApp';
+import useWindowSize from '@/shared/hooks/useWindowSize';
+import { usewindowStore } from '@stores/windowStore';
 
 import { Handle } from '@components/Handle';
 
@@ -34,27 +34,27 @@ const Window = memo(
       y: pos_y,
       width: width,
       height: height,
-    })
+    });
 
-    const Content = useApp({ name: appName })
-    const { width: windowWidth, height: windowHeight } = useWindowSize()
-    const focusOnWindow = usewindowStore(state => state.switchFocused)
+    const Content = useApp({ name: appName });
+    const { width: windowWidth, height: windowHeight } = useWindowSize();
+    const focusOnWindow = usewindowStore(state => state.switchFocused);
 
     const maximizedStyle = {
       width: windowWidth + 6,
       height: windowHeight - 65,
       x: -3,
       y: -3,
-    }
+    };
 
     const ondragstop: RndDragCallback = (_e, d) => {
-      setWindow({ ...window, x: d.x, y: d.y })
-    }
+      setWindow({ ...window, x: d.x, y: d.y });
+    };
 
     const onFocus = () => {
-      if (focused) return
-      focusOnWindow(id)
-    }
+      if (focused) return;
+      focusOnWindow(id);
+    };
 
     const onResize: RndResizeCallback = (
       _e,
@@ -68,13 +68,13 @@ const Window = memo(
         width: ref.style.width,
         height: ref.style.height,
         ...position,
-      })
-    }
+      });
+    };
 
     return (
       <Rnd
         onMouseDown={onFocus}
-        className={Style.window}
+        className={`${Style.window} ${focused ? Style.active : ''}`}
         style={{ zIndex: focused ? 100 : 0, display: minimized ? 'none' : '' }}
         // maxHeight=""
         // minHeight=""
@@ -96,11 +96,11 @@ const Window = memo(
         onDragStop={ondragstop}
         onResize={onResize}
       >
-        <Handle name={name} id={id} />
+        <Handle name={name} id={id} focused={focused} />
         <Content />
       </Rnd>
-    )
+    );
   },
-)
+);
 
 export default Window;

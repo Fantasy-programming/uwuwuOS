@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import useKeyboardInput from '@/shared/hooks/useKeyboardInput';
 
-import { SNAKE_SPEED, GRID_WIDTH, GRID_HEIGHT } from '../_utils/global';
-import { PageProps, Segment } from '../_utils/types';
+import { GRID_WIDTH, GRID_HEIGHT } from '../_utils/global';
+import { GameProps, Segment } from '../_utils/types';
 
 import {
   randomFoodPosition,
@@ -12,8 +12,8 @@ import {
 
 import GameOver from './_subcomponents/GameOver';
 import Gamebar from './_subcomponents/Gamebar';
-import Food from '../_icons/Food';
 import Snakebody from './_subcomponents/Snakebody';
+import Food from '../_icons/Food';
 
 import Style from './Game.module.scss';
 
@@ -22,19 +22,23 @@ const gameboardDimensions = {
   gridTemplateRows: `repeat(${GRID_HEIGHT}, 1fr)`,
 };
 
-const Game = ({ goto }: PageProps) => {
+const Game = ({ goto, speed, settings }: GameProps) => {
   const [isOver, setIsOver] = useState<boolean>(false);
   const [isPaused, setIsPaused] = useState<boolean>(false);
+  const [score, setScore] = useState(0);
 
   const [snakebody, setSnakebody] = useState<Segment[]>([{ x: 6, y: 6 }]);
-  const [food, setFood] = useState<Segment>({ x: 10, y: 10 });
-  const [score, setScore] = useState(0);
+  const [food, setFood] = useState<Segment>(
+    randomFoodPosition([{ x: 6, y: 6 }]),
+  );
 
   const inputDirection = useRef<Segment>({ x: 1, y: 0 });
   const lastInputDirection = useRef<Segment>({ x: 1, y: 0 });
 
   const currentRender = useRef<number>(0);
   const lastRender = useRef<number>(0);
+
+  console.log(settings);
 
   // Register the keydown event listener
   const handleSwitch = useCallback((key: string) => {
@@ -68,7 +72,7 @@ const Game = ({ goto }: PageProps) => {
   const animate = (timestamp: DOMHighResTimeStamp) => {
     currentRender.current = requestAnimationFrame(animate);
     const secondsSinceLastRender = (timestamp - lastRender.current) / 1000;
-    if (secondsSinceLastRender < 1 / SNAKE_SPEED) return;
+    if (secondsSinceLastRender < 1 / speed) return;
     updateSnake();
     lastRender.current = timestamp;
   };
@@ -118,14 +122,20 @@ const Game = ({ goto }: PageProps) => {
     setScore(prevScore => prevScore + 15);
   };
 
+  const handleRestart = () => {
+    setSnakebody([{ x: 6, y: 6 }]);
+    setFood(randomFoodPosition([{ x: 6, y: 6 }]));
+    inputDirection.current = { x: 1, y: 0 };
+    lastInputDirection.current = { x: 1, y: 0 };
+    setScore(0);
+    setIsOver(false);
+    setIsPaused(false);
+  };
+
   return (
     <div className={Style.game}>
       {isOver && (
-        <GameOver
-          score={score}
-          goto={goto}
-          onRestart={() => setIsOver(false)}
-        />
+        <GameOver score={score} goto={goto} onRestart={handleRestart} />
       )}
       <Gamebar
         isPaused={isPaused}

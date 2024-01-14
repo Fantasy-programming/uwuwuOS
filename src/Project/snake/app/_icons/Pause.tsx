@@ -3,8 +3,8 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
-    width="33"
-    height="33"
+    width="48"
+    height="48"
     viewBox="0 0 32 32"
     {...props}
   >
@@ -13,6 +13,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
       data-name="Layer 30"
       data-original="#000000"
     />
+    <title>pause button</title>
   </svg>
 );
 const Memo = memo(SvgComponent);

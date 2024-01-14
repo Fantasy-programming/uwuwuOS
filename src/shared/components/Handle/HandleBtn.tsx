@@ -1,25 +1,42 @@
-import { clsx } from 'clsx';
+import { cva, type VariantProps } from 'class-variance-authority';
 import Styles from './HandleBtn.module.scss';
 
-enum HandleBtnColor {
-  red = 'red',
-  yellow = 'yellow',
-  green = 'green',
-}
+const handlebutton = cva(Styles.handle__button, {
+  variants: {
+    type: {
+      close: Styles.close__button,
+      minimize: Styles.minimize__button,
+      maximize: Styles.maximize__button,
+    },
+  },
+  defaultVariants: {
+    type: 'close',
+  },
+});
 
-type HandleBtnProps = {
-  color?: 'red' | 'yellow' | 'green';
+export interface HandleBtnProps
+  extends React.HTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof handlebutton> {
   onClick?: () => void;
-};
-
-const HandleBtn = ({ color = 'red', onClick }: HandleBtnProps) => {
-  const btnClass = clsx(Styles.handle__button, {
-    [Styles.close__button]: color === HandleBtnColor.red,
-    [Styles.minimize__button]: color === HandleBtnColor.yellow,
-    [Styles.maximize__button]: color === HandleBtnColor.green,
-  });
-
-  return <button className={btnClass} type="button" onClick={onClick} />
+  children?: React.ReactNode;
 }
+
+const HandleBtn: React.FC<HandleBtnProps> = ({
+  type,
+  onClick,
+  className,
+  ...props
+}) => {
+  return (
+    <button
+      className={handlebutton({ type, className })}
+      type="button"
+      onClick={onClick}
+      {...props}
+    >
+      {props.children}
+    </button>
+  );
+};
 
 export default HandleBtn;

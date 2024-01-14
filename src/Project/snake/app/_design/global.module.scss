@@ -1,0 +1,24 @@
+.theme {
+  --background-color-base: #ffffff;
+  --text-color-base: #000000;
+
+  &[data-theme='basic'] {
+    --menu-color-primary: #222222;
+    --menu-color-secondary: rgb(170, 204, 102);
+    --menu-color-tertiary: hsl(240, 24%, 100%);
+
+    --game-color-primary: hsl(211, 100%, 50%);
+    --game-color-secondary: hsl(211, 100%, 50%);
+    --game-color-tertiary: hsl(211, 100%, 50%);
+  }
+
+  &[data-theme='retro'] {
+    --menu-color-primary: #fff;
+    --menu-color-secondary: #000;
+    --menu-color-tertiary: hsl(240, 24%, 100%);
+
+    --game-color-primary: hsl(211, 100%, 50%);
+    --game-color-secondary: hsl(211, 100%, 50%);
+    --game-color-tertiary: hsl(211, 100%, 50%);
+  }
+}

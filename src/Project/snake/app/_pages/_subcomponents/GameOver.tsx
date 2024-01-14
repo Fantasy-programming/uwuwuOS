@@ -14,12 +14,14 @@ const GameOver = ({
     <div className={Style.gameOverScreen}>
       <h1>Game Over</h1>
       <p>Your score: {score}</p>
-      <button type="button" onClick={onRestart}>
-        Restart
-      </button>
-      <button type="button" onClick={() => goto('HOME')}>
-        Restart
-      </button>
+      <div>
+        <button type="button" onClick={onRestart}>
+          Restart
+        </button>
+        <button type="button" onClick={() => goto('HOME')}>
+          Main menu
+        </button>
+      </div>
     </div>
   );
 };
