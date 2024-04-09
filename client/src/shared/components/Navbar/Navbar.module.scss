@@ -1,0 +1,17 @@
+@use '@design/util';
+
+// Container
+.navbar {
+  background: var(--secondary-light);
+  color: var(--font-color);
+
+  border: 2px solid var(--font-color);
+
+  width: auto;
+  height: 20px;
+
+  padding: 15px 10px;
+  margin-bottom: 10px;
+
+  @include util.center(row, space-between);
+}

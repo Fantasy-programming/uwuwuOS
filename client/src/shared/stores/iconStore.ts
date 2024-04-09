@@ -1,8 +1,6 @@
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
-import { applist } from '@utils/global';
-
-// INFO: Icons are static for now
+import { appList } from '@utils/global';
 
 export interface IconState {
   pos_id: string;
@@ -18,10 +16,14 @@ interface IconsActions {
   moveIcon: (appName: string, newPos: string) => void;
 }
 
+//INFO: The pos_id range from 0-0 to 6-17 (row-col)
 export const useIconStore = create<IconsState & IconsActions>()(
   immer(set => ({
-    apps: applist.length,
-    icons: applist,
+    apps: Object.keys(appList).length,
+    icons: Object.values(appList).map(app => ({
+      pos_id: app.start_pos,
+      appName: app.appName,
+    })),
     moveIcon: (appName: string, newPos: string) =>
       set(state => {
         // Anti collision algorithm

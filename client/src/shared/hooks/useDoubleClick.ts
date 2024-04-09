@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 type OptionalCallback = (() => void) | undefined;
 
-const useDoubleClick = (
+export const useDoubleClick = (
   onSingleClick?: OptionalCallback,
   onDoubleClick?: OptionalCallback,
   threshold = 300,
@@ -31,5 +31,3 @@ const useDoubleClick = (
 
   return handleClick;
 };
-
-export default useDoubleClick;

@@ -1,0 +1,27 @@
+@import './base/reset.scss';
+@import './base/normalize.scss';
+@import './base/theme.scss';
+
+html {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  overflow: hidden;
+}
+
+html,
+body,
+#root,
+.Frame,
+.WorkArea {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+body {
+  background-image: url('../assets/WallPapers/spaceship.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}

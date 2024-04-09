@@ -1,0 +1,119 @@
+.game {
+  font-family: var(--menu-font-family);
+
+  display: flex;
+  flex-direction: column;
+  width: calc(100%);
+  height: calc(100% - 30px);
+  position: relative;
+}
+
+.gamebar {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gamebarLeft {
+  align-items: flex-start;
+  display: flex;
+  gap: 1rem;
+}
+
+.snakeScore {
+  font-size: 2rem;
+}
+
+.gameboardWrapper {
+  align-self: center;
+  inset: 0;
+  display: grid;
+  padding: 2rem;
+  overflow: hidden;
+  flex-grow: 1;
+  max-width: 660px;
+  min-width: 0;
+  min-height: 0;
+}
+
+.gameboard {
+  max-width: 100%;
+  max-height: 100%;
+  display: grid;
+  border: 1px solid black;
+  grid-auto-flow: column;
+}
+
+.cell {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.food {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  vertical-align: baseline;
+  background: transparent;
+  animation: 2s linear 0s infinite normal none running spin;
+  opacity: 0.75;
+}
+
+.snake {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  outline: 0px;
+  vertical-align: baseline;
+  background: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  transition: all 0.1s linear;
+}
+
+/* Game Over */
+
+.gameOverScreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  z-index: 10;
+
+  h1 {
+    font-size: 5rem;
+    text-transform: uppercase;
+    font-family: var(--menu-font-family);
+  }
+  p {
+    font-size: 2rem;
+  }
+
+  div {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

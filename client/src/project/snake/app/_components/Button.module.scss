@@ -1,0 +1,91 @@
+.button {
+  border: 2px solid transparent;
+  border-radius: 2px;
+
+  padding: 0px;
+  min-width: 4rem;
+
+  background-color: var(--hole-color);
+  box-shadow: 2.5px 2.5px 2.5px var(--primary-button-shadow);
+  cursor: pointer;
+
+  span {
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-weight: 600;
+    // font-size: clamp(0.5rem, 2vw, 1.5rem);
+
+    border-radius: 9px;
+    padding: 10px 12px 7px;
+    width: 100%;
+
+    color: var(--primary-button-foreground);
+    background-color: var(--button-color);
+    background-image: url('./_subcomponents/ep-133-noise.png');
+    background-size: 80px 80px;
+
+    box-shadow:
+      inset 1px 1px 1px var(--light-shadow-color),
+      inset -1px -1px 1px var(--dark-shadow-color),
+      2px 2px 4px #000;
+
+    transition-property: transform, background-color, box-shadow;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.25, 0.5, 0.5, 1);
+  }
+
+  &:active span {
+    transform: scale(0.98);
+    background-color: var(--button-color-active);
+    box-shadow:
+      inset 0 0 4px #000,
+      inset 1px 1px 1px transparent,
+      inset -1px -1px 1px transparent,
+      2px 2px 4px transparent;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+
+.primary {
+  --button-color: var(--primary-button-color);
+  --button-color-active: var(--primary-button-color-active);
+  --light-shadow-color: var(--primary-light-shadow);
+  --dark-shadow-color: var(--primary-dark-shadow);
+}
+
+.secondary {
+  --button-color: var(--secondary-button-color);
+  --button-color-active: var(--secondary-button-color-active);
+  --light-shadow-color: var(--secondary-light-shadow);
+  --dark-shadow-color: var(--secondary-dark-shadow);
+}
+
+.danger {
+  --button-color: var(--danger-button-color);
+  --button-color-active: var(--danger-button-color-active);
+}
+
+.small {
+  min-width: 2rem;
+  > span {
+    padding: 5px 7px 4px;
+    fill: #222;
+  }
+}
+
+.large {
+  min-width: 6rem;
+}
+
+.icon {
+}

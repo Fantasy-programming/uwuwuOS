@@ -1,21 +1,26 @@
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
-
-// TODO: Implement focus state (current windows)
-// TODO: Implement a way to do (minimized / maximized / normal)
+import { AppConfig } from '../types/types';
 
 export interface WindowState {
   id: string;
   name: string;
   appName: string;
-  focused?: boolean;
+  focused: boolean;
   minimized?: boolean;
   maximized?: boolean;
   pos_x?: number;
   pos_y?: number;
   width?: string;
   height?: string;
+  min_width?: string;
+  min_height?: string;
+  max_width?: string;
+  max_height?: string;
+  resizable?: boolean;
 }
+
+export type WindowStateWithoutId = Omit<WindowState, 'id'>;
 
 interface WindowsState {
   processes: number;
@@ -23,7 +28,7 @@ interface WindowsState {
 }
 
 interface WindowsActions {
-  spawnProcess: (info: WindowState) => void;
+  spawnProcess: (info: AppConfig) => void;
   killProcess: (id: string) => void;
   switchFocused: (id: string) => void;
   switchMinimized: (id: string) => void;
@@ -34,11 +39,14 @@ export const usewindowStore = create<WindowsState & WindowsActions>()(
   immer(set => ({
     processes: 0,
     windows: [],
-    spawnProcess: (info: WindowState) =>
-      set(state => {
+    spawnProcess: info => {
+      const id = crypto.randomUUID();
+
+      return set(state => {
         state.processes + 1;
-        state.windows.push(info);
-      }),
+        state.windows.push({ ...info, id, focused: true });
+      });
+    },
     killProcess: (id: string) =>
       set(state => {
         state.processes - 1;

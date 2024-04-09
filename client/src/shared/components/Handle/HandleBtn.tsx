@@ -3,14 +3,14 @@ import Styles from './HandleBtn.module.scss';
 
 const handlebutton = cva(Styles.handle__button, {
   variants: {
-    type: {
+    variant: {
       close: Styles.close__button,
       minimize: Styles.minimize__button,
       maximize: Styles.maximize__button,
     },
   },
   defaultVariants: {
-    type: 'close',
+    variant: 'close',
   },
 });
 
@@ -22,14 +22,14 @@ export interface HandleBtnProps
 }
 
 const HandleBtn: React.FC<HandleBtnProps> = ({
-  type,
   onClick,
+  variant,
   className,
   ...props
 }) => {
   return (
     <button
-      className={handlebutton({ type, className })}
+      className={handlebutton({ variant, className })}
       type="button"
       onClick={onClick}
       {...props}

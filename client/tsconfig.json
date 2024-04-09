@@ -24,15 +24,15 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"],
-      "@design/*": ["src/App/design/*"],
-      "@assets/*": ["src/App/assets/*"],
-      "@project/*": ["src/Project/*"],
+      "@design/*": ["src/app/design/*"],
+      "@assets/*": ["src/app/assets/*"],
+      "@project/*": ["src/project/*"],
       "@components/*": ["src/shared/components/*"],
       "@hooks/*": ["src/shared/hooks/*"],
       "@stores/*": ["src/shared/stores/*"],
-      "@utils/*": ["src/shared/utils/*"]
-    }
+      "@utils/*": ["src/shared/utils/*"],
+    },
   },
   "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [{ "path": "./tsconfig.node.json" }],
 }

@@ -1,12 +1,16 @@
 .icon {
+  width: 100%;
+  height: 100%;
+
+  padding: 0rem 0.5rem;
+
   display: inline-flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
+
   position: relative;
-  padding: 0rem 0.5rem;
-  width: 100%;
-  height: 100%;
 
   .title {
     font-size: 0.75rem;
@@ -16,7 +20,8 @@
     margin-top: 0.5rem;
   }
 
-  .overlay {
+  &::after {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -27,10 +32,19 @@
     transition: width 0.3s height 0.3s;
   }
 
-  &:hover {
-    .overlay {
-      width: 100%;
-      height: 100%;
-    }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.04rem lightgray;
+  }
+
+  &:focus::after {
+    background-color: lightgray;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover::after {
+    width: 100%;
+    height: 100%;
   }
 }

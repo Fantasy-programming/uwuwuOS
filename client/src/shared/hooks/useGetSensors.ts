@@ -1,17 +1,10 @@
-import { useSensor, useSensors } from '@dnd-kit/core';
-import { MouseSensor, TouchSensor } from '@utils/hackSensors';
+import { useSensor, MouseSensor, useSensors } from '@dnd-kit/core';
 
 export const useGetSensors = () => {
   const sensors = useSensors(
     useSensor(MouseSensor, {
       activationConstraint: {
         distance: 5,
-      },
-    }),
-    useSensor(TouchSensor, {
-      activationConstraint: {
-        delay: 250,
-        tolerance: 5,
       },
     }),
   );

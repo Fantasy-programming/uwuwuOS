@@ -7,14 +7,8 @@ export interface ToggleSwitchProps {
 
 const ToggleSwitch = ({ isToggled, onToggle }: ToggleSwitchProps) => {
   return (
-    // eslint-disable-next-line jsx-a11y/label-has-associated-control
-    <label className={Style['toggle-switch']} htmlFor="switchInput">
-      <input
-        type="checkbox"
-        checked={isToggled}
-        onChange={onToggle}
-        id="switchInput"
-      />
+    <label className={Style['toggle-switch']}>
+      <input type="checkbox" checked={isToggled} onChange={onToggle} />
       <span className={Style.switch} />
     </label>
   );

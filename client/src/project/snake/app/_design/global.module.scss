@@ -1,0 +1,50 @@
+:root {
+  --background-color-base: #ffffff;
+  --text-color-base: #000000;
+
+  --menu-color-primary: #222222;
+  --menu-color-secondary: rgb(170, 204, 102);
+  --menu-color-tertiary: hsl(240, 24%, 100%);
+  --menu-font-color: rgb(170, 204, 102);
+
+  --game-color-primary: hsl(211, 100%, 50%);
+  --game-color-secondary: hsl(211, 100%, 50%);
+  --game-color-tertiary: hsl(211, 100%, 50%);
+
+  --primary-button-color: #f05a22;
+  --primary-button-foreground: #fff;
+  --primary-button-color-active: #ee5529;
+  --primary-button-shadow: rgba(33, 33, 33, 0.8);
+  --primary-light-shadow: #ffb147;
+  --primary-dark-shadow: #d72d12;
+
+  // rgb(255 255 255 / 0.6)
+
+  --secondary-button-color: #76aa51;
+  --secondary-button-foreground: #fff;
+  --secondary-button-color-active: #6a9949;
+  --secondary-button-shadow: rgba(33, 33, 33, 0.8);
+  --secondary-light-shadow: #b5d98f;
+  --secondary-dark-shadow: #4e7b3b;
+
+  --danger-button-color: #b5311c;
+  --danger-button-color-foreground: #fff;
+  --danger-button-color-active: #b9321c;
+  --primary-button-shadow: rgba(33, 33, 33, 0.8);
+
+  --hole-color: #222222;
+}
+
+.theme {
+  &[data-theme='retro'] {
+    --menu-color-primary: #bbb;
+    --menu-color-secondary: #000;
+    --menu-color-tertiary: hsl(240, 24%, 100%);
+    --menu-font-color: #fff;
+    --menu-font-family: 'Press Start 2P', cursive;
+
+    --game-color-primary: hsl(211, 100%, 50%);
+    --game-color-secondary: hsl(211, 100%, 50%);
+    --game-color-tertiary: hsl(211, 100%, 50%);
+  }
+}

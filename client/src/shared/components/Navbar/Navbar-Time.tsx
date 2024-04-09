@@ -1,5 +1,5 @@
-const Time = () => {
-  return <div>Sat Oct 16 11:28 AM</div>;
+const NavTime = () => {
+  return <div>NavTime</div>;
 };
 
-export default Time;
+export default NavTime;
