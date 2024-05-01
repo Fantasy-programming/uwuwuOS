@@ -6,7 +6,7 @@ interface SVGRProps {
 }
 
 export interface AppConfig {
-  name: string;
+  title: string;
   appName: string;
   width: string;
   height: string;

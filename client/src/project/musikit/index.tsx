@@ -3,7 +3,7 @@ import { AppConfig } from '@/shared/types/types';
 import app from './app';
 
 const config: AppConfig = {
-  name: 'Drumkit',
+  title: 'Drumkit',
   appName: 'Drumkit',
   width: '658px',
   height: '490px',

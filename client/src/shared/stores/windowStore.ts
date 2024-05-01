@@ -4,7 +4,7 @@ import { AppConfig } from '../types/types';
 
 export interface WindowState {
   id: string;
-  name: string;
+  title: string;
   appName: string;
   focused: boolean;
   minimized?: boolean;
@@ -31,6 +31,7 @@ interface WindowsActions {
   spawnProcess: (info: AppConfig) => void;
   killProcess: (id: string) => void;
   switchFocused: (id: string) => void;
+  switchTitle: (id: string, title: string) => void;
   switchMinimized: (id: string) => void;
   switchMaximized: (id: string) => void;
 }
@@ -74,6 +75,12 @@ export const usewindowStore = create<WindowsState & WindowsActions>()(
           window.id === id
             ? { ...window, focused: true }
             : { ...window, focused: false },
+        );
+      }),
+    switchTitle: (id: string, title: string) =>
+      set(state => {
+        state.windows = state.windows.map(window =>
+          window.id === id ? { ...window, title } : window,
         );
       }),
   })),

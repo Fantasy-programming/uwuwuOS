@@ -6,17 +6,11 @@ import Stretch from './_svg/stretch';
 import HandleBtn from './HandleBtn';
 
 import Style from './Handle.module.scss';
+import { useWindowContext } from '../Window/Window.hook';
 
-// million-ignore
-export const Handle = ({
-  name,
-  id,
-  focused,
-}: {
-  name: string;
-  id: string;
-  focused: boolean;
-}) => {
+export const Handle = () => {
+  const context = useWindowContext();
+
   const killProcess = usewindowStore(state => state.killProcess);
   const minimizeProcess = usewindowStore(state => state.switchMinimized);
   const maximizeProcess = usewindowStore(state => state.switchMaximized);
@@ -25,26 +19,32 @@ export const Handle = ({
     <div className={`${Style.handle} windows__handle`}>
       <div
         className={`${Style.handle__control} ${
-          !focused ? Style.unfocused : ''
+          !context.focusState ? Style.unfocused : ''
         } `}
       >
         <HandleBtn
           variant="close"
           onClick={() => {
-            killProcess(id);
+            killProcess(context.id);
           }}
         >
           <Close />
         </HandleBtn>
-        <HandleBtn variant="maximize" onClick={() => maximizeProcess(id)}>
+        <HandleBtn
+          variant="maximize"
+          onClick={() => maximizeProcess(context.id)}
+        >
           <Stretch />
         </HandleBtn>
-        <HandleBtn variant="minimize" onClick={() => minimizeProcess(id)}>
+        <HandleBtn
+          variant="minimize"
+          onClick={() => minimizeProcess(context.id)}
+        >
           <Minimize />
         </HandleBtn>
       </div>
       <div className={Style.handle__title}>
-        <p>{name}</p>
+        <p>{context.appName}</p>
       </div>
     </div>
   );

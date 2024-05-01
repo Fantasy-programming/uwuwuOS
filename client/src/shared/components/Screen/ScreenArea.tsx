@@ -28,7 +28,7 @@ const WindowsArea = () => {
         return (
           <Window
             key={window.id}
-            name={window.name}
+            title={window.title}
             appName={window.appName}
             id={window.id}
             width={window.width}
