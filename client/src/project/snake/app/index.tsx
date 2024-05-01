@@ -10,12 +10,13 @@ import Settings from './_pages/Settings';
 import Game from './_pages/Game';
 import Home from './_pages/Home';
 import Multiplayer from './_pages/Multiplayer';
+import { useWindowContext } from '@/shared/components/Window/Window.hook';
 import { usewindowStore } from '@/shared/stores/windowStore';
 
 // Volume should be between 0 and 10
 const Content = () => {
-  const windows = usewindowStore(state => state.windows);
-  const state = windows.find(window => window.name === 'Snake')!;
+  const context = useWindowContext();
+  const switchTitle = usewindowStore(state => state.switchTitle);
 
   const [screen, setScreen] = useState<ScreenType>('HOME');
   const [speed, setSpeed] = useState<number>(SNAKE_SPEED_EASY);
@@ -28,34 +29,38 @@ const Content = () => {
 
   switch (screen) {
     case 'HOME':
+      switchTitle(context.id, 'Snake');
+
       return (
         <Home
           goto={setScreen}
           setSpeed={setSpeed}
           settings={settings}
-          focused={state.focused}
+          focused={context.focusState}
         />
       );
     case 'GAME':
+      switchTitle(context.id, 'Snake - Game');
       return (
         <Game
           goto={setScreen}
           speed={speed}
           settings={settings}
-          focused={state.focused}
+          focused={context.focusState}
         />
       );
     case 'LEADERBOARDS':
-      return <LeaderBoards goto={setScreen} focused={state.focused} />;
+      return <LeaderBoards goto={setScreen} focused={context.focusState} />;
     case 'MULTIPLAYER':
       return <Multiplayer />;
     case 'SETTINGS':
+      switchTitle(context.id, 'Snake - Settings');
       return (
         <Settings
           goto={setScreen}
           settings={settings}
           updateSettings={setSettings}
-          focused={state.focused}
+          focused={context.focusState}
         />
       );
   }
