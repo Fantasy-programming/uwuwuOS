@@ -2,10 +2,9 @@ import { SVGProps } from 'react';
 
 const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
   <svg
-    width={6}
-    height={1}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 7 7"
     {...props}
   >
     <title>Minimize</title>

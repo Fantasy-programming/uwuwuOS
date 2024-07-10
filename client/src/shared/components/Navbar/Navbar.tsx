@@ -9,11 +9,11 @@ const Navbar = () => {
   const focusedWindow = windows.find(window => window.focused === true);
 
   return (
-    <div className={Style.navbar}>
+    <nav className={Style.navbar}>
       <Controls current={focusedWindow} />
       <Context current={focusedWindow} />
       <NavTime />
-    </div>
+    </nav>
   );
 };
 

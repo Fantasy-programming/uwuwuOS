@@ -2,7 +2,7 @@ import { SVGProps } from 'react';
 
 const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
   <svg
-    viewBox="0 0 13 13"
+    viewBox="0 0 7 7"
     xmlns="http://www.w3.org/2000/svg"
     fillRule="evenodd"
     clipRule="evenodd"

@@ -14,3 +14,7 @@ A Simple web OS for creative out here.
 - Snake
 - UwuTypers
 - Tik-Tok-Tak
+
+## TODO
+
+- [ ] A better way to add apps & A Shared context for apps to interact wth the system

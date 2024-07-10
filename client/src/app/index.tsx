@@ -1,24 +1,19 @@
+import * as React from 'react';
+
 import './design/globals.scss';
 
-import {
-  Screen,
-  DragArea,
-  WindowsArea,
-  WorkArea,
-} from '@components/Screen/ScreenArea';
+import { DragArea, WindowsArea, WorkArea } from '@components/Screen/ScreenArea';
 import Navbar from '@components/Navbar/Navbar';
 
 function App() {
   return (
-    <>
-      <Screen>
-        <Navbar />
-        <WorkArea>
-          <DragArea />
-          <WindowsArea />
-        </WorkArea>
-      </Screen>
-    </>
+    <React.Fragment>
+      <Navbar />
+      <WorkArea>
+        <DragArea />
+        <WindowsArea />
+      </WorkArea>
+    </React.Fragment>
   );
 }
 

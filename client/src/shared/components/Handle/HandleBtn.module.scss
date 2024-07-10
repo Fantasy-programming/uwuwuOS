@@ -1,7 +1,9 @@
 .handle__button {
   --bgcolor: #ff5f56;
+
   border: none;
   display: inline-flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
@@ -11,6 +13,11 @@
 
   background-color: var(--bgcolor);
   transition: transform 100ms ease-in;
+}
+
+.handle__button svg {
+  height: 0.4rem;
+  width: 0.4rem;
 }
 
 .close__button {

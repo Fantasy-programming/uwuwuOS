@@ -8,11 +8,6 @@ import { useGetSensors } from '@hooks/useGetSensors';
 import Window from '@components/Window/Window';
 import Grid from './_components/Grid';
 
-/** Screen Wrapper */
-const Screen = ({ children }: { children: ReactNode }) => {
-  return <>{children}</>;
-};
-
 /** Work Area */
 const WorkArea = ({ children }: { children: ReactNode }) => {
   return <div className="WorkArea"> {children} </div>;
